@@ -4,7 +4,7 @@ namespace Shipov_Platformer_MVC
 {
     public class ParalaxManager : IUpdate
     {
-        private const float _offset = 0.5f;
+        private const float _offset = 0.6f;
 
         private Transform _mainCamera;
         private Transform _backGround;
