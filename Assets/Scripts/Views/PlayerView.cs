@@ -8,7 +8,7 @@ namespace Shipov_Platformer_MVC
         public GameObject PlayerGameObject;
 
         public float Speed = 5.0f;
-        public float JumpForce = 10.0f;
+        public float JumpForce = 5.0f;
 
         public PlayerView(Health health, IFactory factory)
         {

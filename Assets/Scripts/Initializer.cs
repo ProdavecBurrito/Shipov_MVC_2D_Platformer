@@ -8,13 +8,16 @@ namespace Shipov_Platformer_MVC
         public InputController InputController { get; private set; }
         public PlayerView PlayerView { get; private set; }
         public PlayerModel PlayerModel { get; private set; }
+        public SpriteAnimator SpriteAnimator { get; private set; }
         public IFactory Factory { get; private set; }
 
         public Initializer(Transform camera, Transform backGround)
         {
+            var configAnimation = Resources.Load<SpriteAnimationCnfg>("PlayerAnimations");
             Factory = new LoadingGOFactory();
             PlayerView = new PlayerView(new Health(100), Factory);
-            PlayerModel = new PlayerModel(PlayerView.CharacterRigidbody);
+            SpriteAnimator = new SpriteAnimator(configAnimation, PlayerView.CharacterSpriteRenderer, 5.0f);
+            PlayerModel = new PlayerModel(PlayerView.CharacterRigidbody, SpriteAnimator);
             InputController = new InputController(PlayerModel, PlayerView);
 
             ParalaxManager = new ParalaxManager(camera, backGround);

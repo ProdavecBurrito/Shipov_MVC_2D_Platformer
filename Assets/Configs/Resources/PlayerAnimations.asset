@@ -16,7 +16,7 @@ MonoBehaviour:
   - CharacterBehavior: 0
     Sprites:
     - {fileID: -7750761410467519339, guid: dfc7090c56f3626418196653e1eb610d, type: 3}
-    - {fileID: -3258305651147157043, guid: dfc7090c56f3626418196653e1eb610d, type: 3}
+    - {fileID: 4854638451998381413, guid: dfc7090c56f3626418196653e1eb610d, type: 3}
   - CharacterBehavior: 1
     Sprites:
     - {fileID: -7750761410467519339, guid: dfc7090c56f3626418196653e1eb610d, type: 3}
