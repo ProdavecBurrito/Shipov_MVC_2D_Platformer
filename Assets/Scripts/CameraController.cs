@@ -2,8 +2,11 @@ using UnityEngine;
 
 namespace Shipov_Platformer_MVC
 {
-    public class CameraController : IUpdate
+    public class CameraController : IFixedUpdate
     {
+        private const float X_OFFSET = 1.5f;
+        private const float CAMERA_SPEED = 2.0f;
+
         private Transform _playerTransform;
         private Transform _mainCamera;
         private Vector3 _offset;
@@ -17,9 +20,19 @@ namespace Shipov_Platformer_MVC
             _offset = _mainCamera.position - _playerTransform.position;
         }
 
-        public void UpdateTick()
+        public void FixedUpdateTick()
         {
-            _mainCamera.position = _playerTransform.position + _offset;
+            if (_playerTransform.localScale.x < 0)
+            {
+                _mainCamera.position = Vector3.Lerp(_mainCamera.position,
+                    _playerTransform.position.Change(_playerTransform.position.x - X_OFFSET) + _offset, CAMERA_SPEED * Time.deltaTime);
+
+            }
+            else if (_playerTransform.localScale.x > 0)
+            {
+                _mainCamera.position = Vector3.Lerp(_mainCamera.position,
+                    _playerTransform.position.Change(_playerTransform.position.x + X_OFFSET) + _offset, CAMERA_SPEED * Time.deltaTime);
+            }
         }
     }
 }

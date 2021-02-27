@@ -8,7 +8,7 @@ namespace Shipov_Platformer_MVC
         public CharacterBehavior BahaviorAnimation;
         public List<Sprite> Sprites;
 
-        public float Speed = 10;
+        public float Speed = 10.0f;
         public float Counter = 0;
         public bool Loop = false;
         public bool Sleeps;

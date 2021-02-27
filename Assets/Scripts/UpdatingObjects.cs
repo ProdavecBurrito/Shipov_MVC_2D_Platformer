@@ -2,23 +2,23 @@ using System.Collections.Generic;
 
 namespace Shipov_Platformer_MVC
 {
-    public class UpdatingObjects
+    public class UpdatingObjects <T>
     {
-        private List<IUpdate> _updatingObjects;
+        private List<T> _updatingObjects;
 
         public int Count => _updatingObjects.Count;
 
         public UpdatingObjects()
         {
-            _updatingObjects = new List<IUpdate>();
+            _updatingObjects = new List<T>();
         }
 
-        public void AddUpdatingObject(IUpdate update)
+        public void AddUpdatingObject(T update)
         {
             _updatingObjects.Add(update);
         }
 
-        public void RemoveUpdatingObject(IUpdate update)
+        public void RemoveUpdatingObject(T update)
         {
             if (_updatingObjects.Contains(update))
             {
@@ -26,7 +26,7 @@ namespace Shipov_Platformer_MVC
             }
         }
 
-        public IUpdate this[int index]
+        public T this[int index]
         {
             get
             {
