@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace Shipov_Platformer_MVC
@@ -7,6 +6,7 @@ namespace Shipov_Platformer_MVC
     {
         [SerializeField] private Camera _mainCamera;
         [SerializeField] private Transform _backGround;
+        [SerializeField] private LevelObjectView _levelObject;
 
         private UpdatingObjects _updatingObjects;
         private Initializer _initializer;
@@ -17,6 +17,9 @@ namespace Shipov_Platformer_MVC
             _initializer = new Initializer(_mainCamera.transform, _backGround);
 
             _updatingObjects.AddUpdatingObject(_initializer.ParalaxManager);
+            _updatingObjects.AddUpdatingObject(_initializer.InputController);
+            _updatingObjects.AddUpdatingObject(_initializer.SpriteAnimator);
+            _updatingObjects.AddUpdatingObject(_initializer.CameraController);
         }
 
         void Update()

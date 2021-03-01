@@ -13,14 +13,6 @@ namespace Shipov_Platformer_MVC
             _updatingObjects = new List<IUpdate>();
         }
 
-        public IUpdate this[int index]
-        {
-            get
-            {
-                return _updatingObjects[index];
-            }
-        }
-
         public void AddUpdatingObject(IUpdate update)
         {
             _updatingObjects.Add(update);
@@ -31,6 +23,14 @@ namespace Shipov_Platformer_MVC
             if (_updatingObjects.Contains(update))
             {
                 _updatingObjects.Remove(update);
+            }
+        }
+
+        public IUpdate this[int index]
+        {
+            get
+            {
+                return _updatingObjects[index];
             }
         }
     }
