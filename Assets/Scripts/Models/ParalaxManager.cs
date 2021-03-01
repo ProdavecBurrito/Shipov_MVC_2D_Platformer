@@ -19,7 +19,7 @@ namespace Shipov_Platformer_MVC
             _cameraStartPosition = _mainCamera.transform.position;
         }
 
-        public void UpdateTick()
+        public void Fly()
         {
             _backGround.position = _backStartPosition + (_mainCamera.position - _cameraStartPosition) * _offset;
         }

@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 namespace Shipov_Platformer_MVC

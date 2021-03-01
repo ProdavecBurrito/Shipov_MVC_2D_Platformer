@@ -15,14 +15,14 @@ namespace Shipov_Platformer_MVC
         private bool _isWalk;
         private int _currentJumps;
 
-        public PhysicsMovement(Rigidbody2D rigidbody, SpriteAnimator spriteAnimator, GroundChecker groundChecker)
+        public PhysicsMovement(Rigidbody2D rigidbody, SpriteAnimator spriteAnimator)
         {
             _leftSide = new Vector3(-1, 1, 1);
             _rightSide = new Vector3(1, 1, 1);
 
             _rigidbody = rigidbody;
             _spriteAnimator = spriteAnimator;
-            _groundChecker = groundChecker;
+            _groundChecker = rigidbody.transform.Find("GroundChecker").GetComponent<GroundChecker>();
         }
 
         public void UpdateMovement(float x, float currentSpeed, bool isJump, float jumpForce)

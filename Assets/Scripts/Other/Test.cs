@@ -12,8 +12,8 @@ public class Test : MonoBehaviour
         Vector3 pos = transform.position + Vector3.down;
 
         Handles.color = new Color(1.0f, 0.0f, 1.0f, 0.3f);
-        Handles.DrawSolidArc(pos, Vector3.down, transform.forward, 90, 55);
-        Handles.DrawSolidArc(pos, Vector3.down, transform.forward, -90, 55);
+        Handles.DrawSolidArc(pos, Vector3.down, transform.up, 90, 55);
+        Handles.DrawSolidArc(pos, Vector3.down, transform.up, -90, 55);
     }
 
 #endif

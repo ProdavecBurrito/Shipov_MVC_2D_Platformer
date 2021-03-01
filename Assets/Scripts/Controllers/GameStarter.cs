@@ -30,7 +30,7 @@ namespace Shipov_Platformer_MVC
         {
             for (int i = 0; i < _updatingObjects.Count; i++)
             {
-                _updatingObjects[i].UpdateTick();
+                _updatingObjects[i].Fly();
             }
         }
 

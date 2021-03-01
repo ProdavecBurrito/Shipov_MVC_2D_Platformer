@@ -144,7 +144,7 @@ GameObject:
   - component: {fileID: 5122275302644642013}
   - component: {fileID: 9076756059785489996}
   m_Layer: 8
-  m_Name: groundCheck
+  m_Name: GroundChecker
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

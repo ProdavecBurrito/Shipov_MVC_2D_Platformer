@@ -19,7 +19,7 @@ namespace Shipov_Platformer_MVC
             _speed = speed;
         }
 
-        public void UpdateTick()
+        public void Fly()
         {
             foreach (var animation in _activeAnimations)
             {

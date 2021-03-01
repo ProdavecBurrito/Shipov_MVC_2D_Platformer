@@ -13,11 +13,16 @@ namespace Shipov_Platformer_MVC
             _cannonView = cannonView;
         }
 
-        public void UpdateTick()
+        public void Fly()
         {
             if (_cannonBurrel.IsFoundTarget())
             {
-                _cannonBurrel.FollowTarget(_cannonBurrel.GetTarget);
+                _cannonBurrel.FollowTarget();
+                _cannonBurrel.Attack();
+            }
+            else
+            {
+                _cannonBurrel.StopAttack();
             }
         }
     }
