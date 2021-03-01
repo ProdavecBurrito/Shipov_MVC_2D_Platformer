@@ -1,26 +1,29 @@
-﻿using UnityEngine;
+using UnityEngine;
 
 namespace Shipov_Platformer_MVC
 {
-    public class PhysicsMovement : IMovement
+    public class NonPhysicsMovement : IMovement
     {
         private const int MAX_JUMPS = 2;
 
-        private Rigidbody2D _rigidbody;
+        private Transform _playerTransform;
         private SpriteAnimator _spriteAnimator;
         private GroundChecker _groundChecker;
         private Vector3 _leftSide;
         private Vector3 _rightSide;
+
         private bool _isJumping;
         private bool _isWalk;
         private int _currentJumps;
+        private float _yVelocity = 0;
+        private float _accelerationOfGravity = -9.82f;
 
-        public PhysicsMovement(Rigidbody2D rigidbody, SpriteAnimator spriteAnimator, GroundChecker groundChecker)
+        public NonPhysicsMovement(Transform playerTransform, SpriteAnimator spriteAnimator, GroundChecker groundChecker)
         {
             _leftSide = new Vector3(-1, 1, 1);
             _rightSide = new Vector3(1, 1, 1);
 
-            _rigidbody = rigidbody;
+            _playerTransform = playerTransform;
             _spriteAnimator = spriteAnimator;
             _groundChecker = groundChecker;
         }
@@ -40,15 +43,15 @@ namespace Shipov_Platformer_MVC
                 _isWalk = true;
                 if (x > 0)
                 {
-                    _rigidbody.transform.localScale = _rightSide;
+                    _playerTransform.transform.localScale = _rightSide;
                 }
 
                 else if (x < 0)
                 {
-                    _rigidbody.transform.localScale = _leftSide;
+                    _playerTransform.transform.localScale = _leftSide;
                 }
 
-                _rigidbody.AddForce(_rigidbody.transform.right * currentSpeed * x, ForceMode2D.Force);
+                _playerTransform.Translate(x * currentSpeed * Time.deltaTime, 0.0f, 0.0f);
             }
             else
             {
@@ -58,11 +61,11 @@ namespace Shipov_Platformer_MVC
 
         private void Jump(bool isJump, float jumpForce)
         {
-            if (isJump && _groundChecker.IsGrounded || isJump && _currentJumps != MAX_JUMPS)
+            if (isJump && _groundChecker.IsGrounded && _yVelocity == 0 || isJump && _currentJumps != MAX_JUMPS)
             {
+                _yVelocity = jumpForce * 2;
                 _isJumping = true;
                 _currentJumps++;
-                _rigidbody.AddForce(Vector3.up * jumpForce, ForceMode2D.Impulse);
                 _groundChecker.ChangeGrounded(false);
             }
         }
@@ -92,7 +95,14 @@ namespace Shipov_Platformer_MVC
             {
                 _isJumping = false;
                 _currentJumps = 0;
+                _yVelocity = 0;
+            }
+            else if (!_groundChecker.IsGrounded && _isJumping)
+            {
+                _yVelocity += _accelerationOfGravity * Time.deltaTime;
+                _playerTransform.position += Vector3.up * (Time.deltaTime * _yVelocity);
             }
         }
+        
     }
 }
