@@ -12,26 +12,22 @@ namespace Shipov_Platformer_MVC
         private Transform _fireStartPosition;
         private BulletPool _bulletPool;
 
-        public Transform FireStartPosition => _fireStartPosition;
-
         private Vector3 _startRotationPos;
         private LayerMask _layerMask;
 
-        public Transform GetTarget => _targetTransform;
-
-        public CannonBurrel(Transform muzzleTransform, Transform fireStartPos, Transform targetTransform, BulletPool bulletPool)
+        public CannonBurrel(CannonView cannonView, Transform targetTransform, BulletPool bulletPool)
         {
-
-            _fireStartPosition = fireStartPos;
+            _fireStartPosition = cannonView._fireStartPosition;
             _bulletPool = bulletPool;
             _layerMask = LayerMask.GetMask("Player");
-            _muzzleTransform = muzzleTransform;
+            _muzzleTransform = cannonView._cannonBarrel;
             _targetTransform = targetTransform;
             _startRotationPos = new Vector3(0, 0, 0);
         }
 
         public bool IsFoundTarget()
         {
+            _bulletPool.UpdateBullets();
             return Physics2D.Raycast(_fireStartPosition.position, _fireStartPosition.TransformDirection(Vector2.up), MAX_SEARCH, _layerMask);
         }
 
@@ -51,11 +47,6 @@ namespace Shipov_Platformer_MVC
         public void Attack()
         {
             _bulletPool.TryAttack();
-        }
-
-        public void ReloadAttack()
-        {
-
         }
 
         public void StopAttack()

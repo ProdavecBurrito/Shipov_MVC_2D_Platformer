@@ -5,7 +5,7 @@ namespace Shipov_Platformer_MVC
     public class CameraController : IFixedUpdate
     {
         private const float X_OFFSET = 1.5f;
-        private const float CAMERA_SPEED = 2.0f;
+        private const float CAMERA_SPEED = 3.0f;
 
         private Transform _playerTransform;
         private Transform _mainCamera;
@@ -25,13 +25,13 @@ namespace Shipov_Platformer_MVC
             if (_playerTransform.localScale.x < 0)
             {
                 _mainCamera.position = Vector3.Lerp(_mainCamera.position,
-                    _playerTransform.position.Change(_playerTransform.position.x - X_OFFSET) + _offset, CAMERA_SPEED * Time.deltaTime);
+                    _playerTransform.position.Change(_playerTransform.position.x - X_OFFSET) + _offset, CAMERA_SPEED * Time.fixedDeltaTime);
 
             }
             else if (_playerTransform.localScale.x > 0)
             {
                 _mainCamera.position = Vector3.Lerp(_mainCamera.position,
-                    _playerTransform.position.Change(_playerTransform.position.x + X_OFFSET) + _offset, CAMERA_SPEED * Time.deltaTime);
+                    _playerTransform.position.Change(_playerTransform.position.x + X_OFFSET) + _offset, CAMERA_SPEED * Time.fixedDeltaTime);
             }
         }
     }

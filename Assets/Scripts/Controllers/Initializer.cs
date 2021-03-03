@@ -8,34 +8,37 @@ namespace Shipov_Platformer_MVC
         public ParalaxManager ParalaxManager { get; private set; }
         public InputController InputController { get; private set; }
         public PlayerView PlayerView { get; private set; }
-        public SpriteAnimator SpriteAnimator { get; private set; }
+        public SpriteAnimator PlayerSpriteAnimator { get; private set; }
+        public SpriteAnimator CoinsSpriteAnimator { get; private set; }
         public CameraController CameraController { get; private set; }
         public CannonView CannonView { get; private set; }
         public CannonBurrel CannonBurrel { get; private set; }
         public CannonController CannonController { get; private set; }
-        public BulletPool BulletPool { get; private set; }
+        public ContactsDetector ContactsDetector { get; private set; }
+        public CoinManager CoinManager { get; private set; }
 
         public IMovement PlayerModel { get; private set; }
-        public IFactory Factory { get; private set; }
 
         public Initializer(Transform camera, Transform backGround)
         {
-            var configAnimation = Resources.Load<SpriteAnimationCnfg>("PlayerAnimations");
+            var configPlayerAnimation = Resources.Load<SpriteAnimationCnfg>("PlayerAnimations");
+            var configCoinsAnimation = Resources.Load<SpriteAnimationCnfg>("CoinsAnimations");
 
-            var bullerPool = new List<BulletView>(5);
-            Factory = new LoadingGOFactory();
-
-            PlayerView = new PlayerView(new Health(100), Factory);
-            SpriteAnimator = new SpriteAnimator(configAnimation, PlayerView.CharacterSpriteRenderer, 5.0f);
-            PlayerModel = new PhysicsMovement(PlayerView.CharacterRigidbody, SpriteAnimator);
+            PlayerView = new PlayerView(new Health(100), 35.0f);
+            ContactsDetector = new ContactsDetector(PlayerView.CharacterCollider);
+            PlayerSpriteAnimator = new SpriteAnimator(configPlayerAnimation, 5.0f);
+            PlayerModel = new PhysicsMovement(PlayerView.CharacterRigidbody, PlayerSpriteAnimator, ContactsDetector, PlayerView.CharacterSpriteRenderer);
             InputController = new InputController(PlayerModel, PlayerView);
+
+            CoinsSpriteAnimator = new SpriteAnimator(configCoinsAnimation, 10.0f);
+            CoinManager = new CoinManager(PlayerView, new List<LevelObjectView>(), CoinsSpriteAnimator);
 
             CameraController = new CameraController(PlayerView.CharacterTransform, camera);
 
-            CannonView = new CannonView(Factory);
-            CannonBurrel = new CannonBurrel(CannonView._cannonBarrel, CannonView._fireStartPosition, PlayerView.PlayerGameObject.transform, 
-                new BulletPool(new List<BulletView>(5) {new BulletView(Factory), new BulletView(Factory), new BulletView(Factory), new BulletView(Factory), new BulletView(Factory) }, 
-                CannonView._fireStartPosition));
+            CannonView = new CannonView();
+
+            CannonBurrel = new CannonBurrel(CannonView, PlayerView.PlayerGameObject.transform, new BulletPool(new List<BulletView>(5), new PhysicBullet(new BulletView()), CannonView._cannonBarrel));
+
             CannonController = new CannonController(CannonBurrel, CannonView);
 
             ParalaxManager = new ParalaxManager(camera, backGround);

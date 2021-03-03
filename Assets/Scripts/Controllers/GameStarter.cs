@@ -6,7 +6,6 @@ namespace Shipov_Platformer_MVC
     {
         [SerializeField] private Camera _mainCamera;
         [SerializeField] private Transform _backGround;
-        [SerializeField] private LevelObjectView _levelObject;
 
         private UpdatingObjects<IUpdate> _updatingObjects;
         private UpdatingObjects<IFixedUpdate> _fixedUpdatingObjects;
@@ -20,8 +19,9 @@ namespace Shipov_Platformer_MVC
 
             _updatingObjects.AddUpdatingObject(_initializer.ParalaxManager);
             _updatingObjects.AddUpdatingObject(_initializer.InputController);
-            _updatingObjects.AddUpdatingObject(_initializer.SpriteAnimator);
+            _updatingObjects.AddUpdatingObject(_initializer.PlayerSpriteAnimator);
             _updatingObjects.AddUpdatingObject(_initializer.CannonController);
+            _updatingObjects.AddUpdatingObject(_initializer.CoinsSpriteAnimator);
 
             _fixedUpdatingObjects.AddUpdatingObject(_initializer.CameraController);
         }
@@ -30,7 +30,7 @@ namespace Shipov_Platformer_MVC
         {
             for (int i = 0; i < _updatingObjects.Count; i++)
             {
-                _updatingObjects[i].Fly();
+                _updatingObjects[i].UpdateTick();
             }
         }
 
