@@ -19,8 +19,9 @@ namespace Shipov_Platformer_MVC
 
             _updatingObjects.AddUpdatingObject(_initializer.ParalaxManager);
             _updatingObjects.AddUpdatingObject(_initializer.InputController);
-            _updatingObjects.AddUpdatingObject(_initializer.SpriteAnimator);
+            _updatingObjects.AddUpdatingObject(_initializer.PlayerSpriteAnimator);
             _updatingObjects.AddUpdatingObject(_initializer.CannonController);
+            _updatingObjects.AddUpdatingObject(_initializer.CoinsSpriteAnimator);
 
             _fixedUpdatingObjects.AddUpdatingObject(_initializer.CameraController);
         }

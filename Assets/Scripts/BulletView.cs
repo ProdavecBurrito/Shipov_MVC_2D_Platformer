@@ -8,19 +8,23 @@ namespace Shipov_Platformer_MVC
 
         public GameObject BulletGameObject;
         public GroundChecker GroundChecker;
+        public Rigidbody2D BulletRigidBody;
 
         public bool IsVisible;
 
         public BulletView()
         {
+            IsVisible = false;
             BulletGameObject = LoadingGOFactory.Create("CannonBullet");
+            CharacterTransform = BulletGameObject.transform;
             CharacterSpriteRenderer = BulletGameObject.GetComponent<SpriteRenderer>();
             _trail = BulletGameObject.GetComponent<TrailRenderer>();
-            GroundChecker = BulletGameObject.transform.Find("GroundChecker").GetComponent<GroundChecker>();
+            BulletRigidBody = BulletGameObject.GetComponent<Rigidbody2D>();
         }
 
         public void SetVisible(bool visible)
         {
+            CharacterTransform.gameObject.SetActive(visible); // Насколько это дорогая операция?
             IsVisible = visible;
             if (_trail)
             {

@@ -27,6 +27,7 @@ namespace Shipov_Platformer_MVC
 
         public bool IsFoundTarget()
         {
+            _bulletPool.UpdateBullets();
             return Physics2D.Raycast(_fireStartPosition.position, _fireStartPosition.TransformDirection(Vector2.up), MAX_SEARCH, _layerMask);
         }
 
@@ -46,11 +47,6 @@ namespace Shipov_Platformer_MVC
         public void Attack()
         {
             _bulletPool.TryAttack();
-        }
-
-        public void ReloadAttack()
-        {
-
         }
 
         public void StopAttack()

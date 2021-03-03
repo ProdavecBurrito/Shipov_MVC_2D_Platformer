@@ -7,11 +7,14 @@ namespace Shipov_Platformer_MVC
         public Health Health;
         public GameObject PlayerGameObject;
 
-        public float Speed = 2.5f;
+        public LayerMask LayerMask = LayerMask.NameToLayer("Usable");
+
+        public float Speed;
         public float JumpForce = 5.0f;
 
-        public PlayerView(Health health)
+        public PlayerView(Health health, float speed)
         {
+            Speed = speed;
             Health = health;
             PlayerGameObject = LoadingGOFactory.Create("AstroMainChar");
             CharacterTransform = PlayerGameObject.transform;
@@ -34,7 +37,22 @@ namespace Shipov_Platformer_MVC
             {
                 CharacterSpriteRenderer = PlayerGameObject.AddComponent(typeof(SpriteRenderer)) as SpriteRenderer;
             }
-
         }
+
+
+        public void OnTriggerEnterRealization()
+        {
+            if (CharacterCollider is CircleCollider2D circleCollider2D)
+            {
+                TargetCollider = Physics2D.OverlapCircle(circleCollider2D.transform.position, circleCollider2D.radius, LayerMask.value);
+                if (TargetCollider.)
+            }
+
+            if (TargetCollider.CompareTag("Usable"))
+            {
+                OnLevelObjectContact?.Invoke();
+            }
+        }
+    }
     }
 }

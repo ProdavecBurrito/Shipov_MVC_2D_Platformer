@@ -9,19 +9,19 @@ namespace Shipov_Platformer_MVC
         private Transform _mainCamera;
         private Transform _backGround;
         private Vector3 _backStartPosition;
-        private Vector3 _cameraStartPosition;
+        private Vector3 _mainCameraStartPosition;
 
         public ParalaxManager(Transform camera, Transform backGround)
         {
             _mainCamera = camera;
             _backGround = backGround;
             _backStartPosition = _backGround.transform.position;
-            _cameraStartPosition = _mainCamera.transform.position;
+            _mainCameraStartPosition = _mainCamera.transform.position;
         }
 
         public void UpdateTick()
         {
-            _backGround.position = _backStartPosition + (_mainCamera.position - _cameraStartPosition) * _offset;
+            _backGround.position = _backStartPosition + (_mainCamera.position - _mainCameraStartPosition) * _offset;
         }
     }
 }

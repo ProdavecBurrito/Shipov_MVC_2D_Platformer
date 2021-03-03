@@ -8,13 +8,13 @@ namespace Shipov_Platformer_MVC
         private const float DELAY = 2;
         private const float START_SPEED = 5;
 
-        private List<Bullet> _bullets = new List<Bullet>();
+        private List<BaseBullet> _bullets = new List<BaseBullet>();
         private Transform _fireStartPosition;
 
         private int _currentIndex;
         private float _timeTillNextBullet;
 
-        public BulletPool(List<BulletView> bulletViews, Transform transform)
+        public BulletPool(List<BulletView> bulletViews, BaseBullet bulletType, Transform startPos)
         {
             if (bulletViews.Count != bulletViews.Capacity)
             {
@@ -23,12 +23,22 @@ namespace Shipov_Platformer_MVC
                     bulletViews.Add(new BulletView());
                 }
             }
-            _currentIndex = 0;
-            _fireStartPosition = transform;
-            foreach (var bulletView in bulletViews)
+
+            foreach (var bulletView in bulletViews) // Мне кажется, так и тут - не совсем корректно. + происходит что то странное.
+                                                    // При попадании в землю - снаряд, почему то, уничтожается. Не смог понять почему
             {
-                _bullets.Add(new Bullet(bulletView));
+                if (bulletType is NonPhysicBullet)
+                {
+                    _bullets.Add(new NonPhysicBullet(bulletView));
+                }
+                if (bulletType is PhysicBullet)
+                {
+                    _bullets.Add(new PhysicBullet(bulletView));
+                }
             }
+
+            _currentIndex = 0;
+            _fireStartPosition = startPos;
         }
 
         public void TryAttack()
@@ -54,12 +64,16 @@ namespace Shipov_Platformer_MVC
                     }
                 }
             }
+        }
+
+        public void UpdateBullets()
+        {
             _bullets.ForEach(b => b.Fly());
         }
 
         public void AddNewBullet()
         {
-            _bullets.Add(new Bullet(new BulletView()));
+            _bullets.Add(new NonPhysicBullet(new BulletView()));
         }
     }
 }

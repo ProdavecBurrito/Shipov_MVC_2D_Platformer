@@ -5,7 +5,7 @@ namespace Shipov_Platformer_MVC
     public class CameraController : IFixedUpdate
     {
         private const float X_OFFSET = 1.5f;
-        private const float CAMERA_SPEED = 2.0f;
+        private const float CAMERA_SPEED = 3.0f;
 
         private Transform _playerTransform;
         private Transform _mainCamera;

@@ -2,27 +2,23 @@ using UnityEngine;
 
 namespace Shipov_Platformer_MVC
 {
-    public class Bullet : IBullet
+    public class NonPhysicBullet : BaseBullet
     {
         private float _radius = 0.3f;
-        public float _timeToBack = 3.0f;
-        public float _currentTime;
         private Vector3 _velocity;
 
         private float _accelerationOfGravity = -9.82f;
 
         private BulletView _view;
 
-        public BulletView GetBulletView => _view;
-
-        public Bullet(BulletView view)
+        public NonPhysicBullet(BulletView view) : base(view)
         {
             _currentTime = 0;
             _view = view;
             _view.SetVisible(false);
         }
 
-        public void Fly()
+        public override void Fly()
         {
             if (_currentTime < _timeToBack)
             {
@@ -45,7 +41,7 @@ namespace Shipov_Platformer_MVC
             }
         }
 
-        public void Fire(Transform fireStartTransform, Vector3 velocity)
+        public override void Fire(Transform fireStartTransform, Vector3 velocity)
         {
             _view.BulletGameObject.transform.position = fireStartTransform.position;
             _view.BulletGameObject.transform.rotation = fireStartTransform.rotation;

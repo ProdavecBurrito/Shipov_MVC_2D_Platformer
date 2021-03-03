@@ -73,21 +73,21 @@ namespace Shipov_Platformer_MVC
 
         private void ChangeAnimation()
         {
-            if (_isJumping)
-            {
-                _spriteAnimator.StartAnimation(CharacterBehavior.character_jump, true);
-            }
-            else
-            {
-                if (_isWalk)
-                {
-                    _spriteAnimator.StartAnimation(CharacterBehavior.character_walk, true);
-                }
-                else
-                {
-                    _spriteAnimator.StartAnimation(CharacterBehavior.character_idle, true);
-                }
-            }
+            //if (_isJumping)
+            //{
+            //    _spriteAnimator.StartAnimation(CharacterBehavior.character_jump, true);
+            //}
+            //else
+            //{
+            //    if (_isWalk)
+            //    {
+            //        _spriteAnimator.StartAnimation(CharacterBehavior.character_walk, true);
+            //    }
+            //    else
+            //    {
+            //        _spriteAnimator.StartAnimation(CharacterBehavior.character_idle, true);
+            //    }
+            //}
         }
 
         private void CheckGrounded()
