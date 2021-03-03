@@ -10,11 +10,12 @@ namespace Shipov_Platformer_MVC
         public float Speed = 2.5f;
         public float JumpForce = 5.0f;
 
-        public PlayerView(Health health, IFactory factory)
+        public PlayerView(Health health)
         {
             Health = health;
-            PlayerGameObject = factory.Create("AstroMainChar");
+            PlayerGameObject = LoadingGOFactory.Create("AstroMainChar");
             CharacterTransform = PlayerGameObject.transform;
+            CharacterCollider = PlayerGameObject.GetComponent<Collider2D>();
 
             if (PlayerGameObject.TryGetComponent<Rigidbody2D>(out Rigidbody2D rigidbody))
             {

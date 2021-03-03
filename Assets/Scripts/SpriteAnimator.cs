@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
@@ -19,7 +18,7 @@ namespace Shipov_Platformer_MVC
             _speed = speed;
         }
 
-        public void Fly()
+        public void UpdateTick()
         {
             foreach (var animation in _activeAnimations)
             {

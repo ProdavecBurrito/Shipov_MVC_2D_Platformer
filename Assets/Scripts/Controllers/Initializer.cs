@@ -14,28 +14,25 @@ namespace Shipov_Platformer_MVC
         public CannonBurrel CannonBurrel { get; private set; }
         public CannonController CannonController { get; private set; }
         public BulletPool BulletPool { get; private set; }
+        public ContactsDetector ContactsDetector { get; private set; }
 
         public IMovement PlayerModel { get; private set; }
-        public IFactory Factory { get; private set; }
 
         public Initializer(Transform camera, Transform backGround)
         {
             var configAnimation = Resources.Load<SpriteAnimationCnfg>("PlayerAnimations");
-
-            var bullerPool = new List<BulletView>(5);
-            Factory = new LoadingGOFactory();
-
-            PlayerView = new PlayerView(new Health(100), Factory);
+            PlayerView = new PlayerView(new Health(100));
+            ContactsDetector = new ContactsDetector(PlayerView.CharacterCollider);
             SpriteAnimator = new SpriteAnimator(configAnimation, PlayerView.CharacterSpriteRenderer, 5.0f);
-            PlayerModel = new PhysicsMovement(PlayerView.CharacterRigidbody, SpriteAnimator);
+            PlayerModel = new PhysicsMovement(PlayerView.CharacterRigidbody, SpriteAnimator, ContactsDetector);
             InputController = new InputController(PlayerModel, PlayerView);
 
             CameraController = new CameraController(PlayerView.CharacterTransform, camera);
 
-            CannonView = new CannonView(Factory);
-            CannonBurrel = new CannonBurrel(CannonView._cannonBarrel, CannonView._fireStartPosition, PlayerView.PlayerGameObject.transform, 
-                new BulletPool(new List<BulletView>(5) {new BulletView(Factory), new BulletView(Factory), new BulletView(Factory), new BulletView(Factory), new BulletView(Factory) }, 
-                CannonView._fireStartPosition));
+            CannonView = new CannonView();
+
+            CannonBurrel = new CannonBurrel(CannonView, PlayerView.PlayerGameObject.transform, new BulletPool(new List<BulletView>(5), CannonView._fireStartPosition));
+
             CannonController = new CannonController(CannonBurrel, CannonView);
 
             ParalaxManager = new ParalaxManager(camera, backGround);

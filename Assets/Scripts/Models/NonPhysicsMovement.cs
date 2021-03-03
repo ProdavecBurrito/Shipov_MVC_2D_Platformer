@@ -9,6 +9,7 @@ namespace Shipov_Platformer_MVC
         private Transform _playerTransform;
         private SpriteAnimator _spriteAnimator;
         private GroundChecker _groundChecker;
+
         private Vector3 _leftSide;
         private Vector3 _rightSide;
 

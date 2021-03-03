@@ -11,9 +11,9 @@ namespace Shipov_Platformer_MVC
         public Transform _cannonBarrel;
         public Transform _fireStartPosition;
 
-        public CannonView(IFactory factory)
+        public CannonView()
         {
-            _cannonMainObject = factory.Create("Cannon");
+            _cannonMainObject = LoadingGOFactory.Create("Cannon");
             _cannonBarrel = _cannonMainObject.GetComponentInChildren<Transform>().GetChild(0);
             _fireStartPosition = _cannonBarrel.GetChild(0);
         }

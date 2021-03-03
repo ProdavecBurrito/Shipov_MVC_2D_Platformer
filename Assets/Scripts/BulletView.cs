@@ -9,9 +9,11 @@ namespace Shipov_Platformer_MVC
         public GameObject BulletGameObject;
         public GroundChecker GroundChecker;
 
-        public BulletView(IFactory factory)
+        public bool IsVisible;
+
+        public BulletView()
         {
-            BulletGameObject = factory.Create("CannonBullet");
+            BulletGameObject = LoadingGOFactory.Create("CannonBullet");
             CharacterSpriteRenderer = BulletGameObject.GetComponent<SpriteRenderer>();
             _trail = BulletGameObject.GetComponent<TrailRenderer>();
             GroundChecker = BulletGameObject.transform.Find("GroundChecker").GetComponent<GroundChecker>();
@@ -19,6 +21,7 @@ namespace Shipov_Platformer_MVC
 
         public void SetVisible(bool visible)
         {
+            IsVisible = visible;
             if (_trail)
             {
                 _trail.enabled = visible;
