@@ -7,7 +7,7 @@ namespace Shipov_Platformer_MVC
         public Health Health;
         public GameObject PlayerGameObject;
 
-        public LayerMask LayerMask = LayerMask.NameToLayer("Usable");
+        public LayerMask TargetLayerMask = LayerMask.NameToLayer("Usable");
 
         public float Speed;
         public float JumpForce = 5.0f;
@@ -42,17 +42,17 @@ namespace Shipov_Platformer_MVC
 
         public void OnTriggerEnterRealization()
         {
-            if (CharacterCollider is CircleCollider2D circleCollider2D)
+            if (CharacterCollider is CapsuleCollider2D collider)
             {
-                TargetCollider = Physics2D.OverlapCircle(circleCollider2D.transform.position, circleCollider2D.radius, LayerMask.value);
-                if (TargetCollider.)
-            }
-
-            if (TargetCollider.CompareTag("Usable"))
-            {
-                OnLevelObjectContact?.Invoke();
+                TargetCollider = Physics2D.OverlapCapsule(collider.transform.position, collider.size, collider.direction, 360, TargetLayerMask);
+                if (TargetCollider)
+                {
+                    if (TargetCollider.TryGetComponent(out LevelObjectView levelObject))
+                    {
+                        OnLevelObjectContact?.Invoke(levelObject);
+                    }
+                }
             }
         }
-    }
     }
 }

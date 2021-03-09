@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 75981787646871797}
   - component: {fileID: 75981787646871796}
   - component: {fileID: 6558916721656538486}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: spin-h01-128 (15)
-  m_TagString: Untagged
+  m_TagString: Usable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -110,9 +110,9 @@ GameObject:
   - component: {fileID: 75981787701925868}
   - component: {fileID: 75981787701925871}
   - component: {fileID: 9086065084592120416}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: spin-h01-128 (8)
-  m_TagString: Untagged
+  m_TagString: Usable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -209,9 +209,9 @@ GameObject:
   - component: {fileID: 75981787722604781}
   - component: {fileID: 75981787722604780}
   - component: {fileID: 7951559057654067037}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: spin-h01-128 (14)
-  m_TagString: Untagged
+  m_TagString: Usable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -308,9 +308,9 @@ GameObject:
   - component: {fileID: 75981787834920221}
   - component: {fileID: 75981787834920220}
   - component: {fileID: 6604724159605343694}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: spin-h01-128 (16)
-  m_TagString: Untagged
+  m_TagString: Usable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -407,9 +407,9 @@ GameObject:
   - component: {fileID: 75981787868278617}
   - component: {fileID: 75981787868278616}
   - component: {fileID: 75707644195991087}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: spin-h01-128 (3)
-  m_TagString: Untagged
+  m_TagString: Usable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -506,9 +506,9 @@ GameObject:
   - component: {fileID: 75981787980789149}
   - component: {fileID: 75981787980789148}
   - component: {fileID: 231165065600184543}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: spin-h01-128 (13)
-  m_TagString: Untagged
+  m_TagString: Usable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -605,9 +605,9 @@ GameObject:
   - component: {fileID: 75981788046397944}
   - component: {fileID: 75981788046397947}
   - component: {fileID: 4967737366043086379}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: spin-h01-128 (1)
-  m_TagString: Untagged
+  m_TagString: Usable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -755,9 +755,9 @@ GameObject:
   - component: {fileID: 75981788065077327}
   - component: {fileID: 75981788065077326}
   - component: {fileID: 5217098720485103946}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: spin-h01-128 (17)
-  m_TagString: Untagged
+  m_TagString: Usable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -854,9 +854,9 @@ GameObject:
   - component: {fileID: 75981788083630088}
   - component: {fileID: 75981788083630091}
   - component: {fileID: 4201380254658777001}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: spin-h01-128 (20)
-  m_TagString: Untagged
+  m_TagString: Usable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -953,9 +953,9 @@ GameObject:
   - component: {fileID: 75981788178578785}
   - component: {fileID: 75981788178578784}
   - component: {fileID: 473799658817858222}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: spin-h01-128 (18)
-  m_TagString: Untagged
+  m_TagString: Usable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1052,9 +1052,9 @@ GameObject:
   - component: {fileID: 75981788261597030}
   - component: {fileID: 75981788261597025}
   - component: {fileID: 4264012669400946569}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: spin-h01-128 (10)
-  m_TagString: Untagged
+  m_TagString: Usable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1151,9 +1151,9 @@ GameObject:
   - component: {fileID: 75981788323704762}
   - component: {fileID: 75981788323704741}
   - component: {fileID: 8125527768685259066}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: spin-h01-128 (12)
-  m_TagString: Untagged
+  m_TagString: Usable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1250,9 +1250,9 @@ GameObject:
   - component: {fileID: 75981788471484874}
   - component: {fileID: 75981788471484917}
   - component: {fileID: 8206515414771278492}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: spin-h01-128 (11)
-  m_TagString: Untagged
+  m_TagString: Usable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1349,9 +1349,9 @@ GameObject:
   - component: {fileID: 75981788668632056}
   - component: {fileID: 75981788668632059}
   - component: {fileID: 5366930006992775529}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: spin-h01-128 (7)
-  m_TagString: Untagged
+  m_TagString: Usable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1448,9 +1448,9 @@ GameObject:
   - component: {fileID: 75981788723885319}
   - component: {fileID: 75981788723885318}
   - component: {fileID: 9082148235862802490}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: spin-h01-128 (9)
-  m_TagString: Untagged
+  m_TagString: Usable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1547,9 +1547,9 @@ GameObject:
   - component: {fileID: 75981788947559853}
   - component: {fileID: 75981788947559852}
   - component: {fileID: 5107997348427676259}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: spin-h01-128 (5)
-  m_TagString: Untagged
+  m_TagString: Usable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1646,9 +1646,9 @@ GameObject:
   - component: {fileID: 75981788969377676}
   - component: {fileID: 75981788969377679}
   - component: {fileID: 8669273330923308771}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: spin-h01-128 (19)
-  m_TagString: Untagged
+  m_TagString: Usable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1745,9 +1745,9 @@ GameObject:
   - component: {fileID: 75981789338146419}
   - component: {fileID: 75981789338146418}
   - component: {fileID: 1306802192417599305}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: spin-h01-128 (6)
-  m_TagString: Untagged
+  m_TagString: Usable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1844,9 +1844,9 @@ GameObject:
   - component: {fileID: 75981789338975803}
   - component: {fileID: 75981789338975802}
   - component: {fileID: 1395203663669607489}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: spin-h01-128
-  m_TagString: Untagged
+  m_TagString: Usable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1943,9 +1943,9 @@ GameObject:
   - component: {fileID: 75981789496784355}
   - component: {fileID: 75981789496784354}
   - component: {fileID: 420510469429259076}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: spin-h01-128 (2)
-  m_TagString: Untagged
+  m_TagString: Usable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2042,9 +2042,9 @@ GameObject:
   - component: {fileID: 75981789667276480}
   - component: {fileID: 75981789667276483}
   - component: {fileID: 3263604956387904076}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: spin-h01-128 (4)
-  m_TagString: Untagged
+  m_TagString: Usable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
