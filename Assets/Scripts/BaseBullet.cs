@@ -15,11 +15,15 @@ namespace Shipov_Platformer_MVC
         {
             _currentTime = 0;
             _view = view;
-            _view.SetVisible(false);
         }
 
         public abstract void Fly();
 
         public abstract void Fire(Transform fireStartTransform, Vector3 velocity);
+
+        public void ReturnToPool()
+        {
+            _view.SetVisible(false);
+        }
     }
 }

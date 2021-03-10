@@ -3,20 +3,21 @@ using UnityEngine;
 
 namespace Shipov_Platformer_MVC
 {
-    public class LevelObjectView
+    public class LevelObjectView : MonoBehaviour
     {
         public Transform CharacterTransform;
         public Rigidbody2D CharacterRigidbody;
         public SpriteRenderer CharacterSpriteRenderer;
         public Collider2D CharacterCollider;
-        public Collider2D TargetCollider;
+
+        private void Awake()
+        {
+            CharacterTransform = GetComponent<Transform>();
+            CharacterRigidbody = GetComponent<Rigidbody2D>();
+            CharacterSpriteRenderer = GetComponent<SpriteRenderer>();
+            CharacterCollider = GetComponent<Collider2D>();
+        }
 
         public Action<LevelObjectView> OnLevelObjectContact { get; set; }
-
-        //void OnTriggerEnter2D(Collider2D collider)
-        //{
-        //    var levelObject = collider.gameObject.GetComponent<LevelObjectView>();
-        //    OnLevelObjectContact?.Invoke(levelObject);
-        //}
     }
 }

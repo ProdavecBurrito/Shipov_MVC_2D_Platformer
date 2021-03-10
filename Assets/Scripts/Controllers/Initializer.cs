@@ -5,6 +5,7 @@ namespace Shipov_Platformer_MVC
 {
     public class Initializer
     {
+        public References References { get; private set; }
         public ParalaxManager ParalaxManager { get; private set; }
         public InputController InputController { get; private set; }
         public PlayerView PlayerView { get; private set; }
@@ -17,27 +18,31 @@ namespace Shipov_Platformer_MVC
         public ContactsDetector ContactsDetector { get; private set; }
         public CoinManager CoinManager { get; private set; }
 
-        public IMovement PlayerModel { get; private set; }
+        public IMovement PlayerMovement { get; private set; }
 
         public Initializer(Transform camera, Transform backGround)
         {
+            var bulletType = "PhysicBullet";
+            References = new References();
+            var bulletViews = References.GetBulletViews;
+
             var configPlayerAnimation = Resources.Load<SpriteAnimationCnfg>("PlayerAnimations");
             var configCoinsAnimation = Resources.Load<SpriteAnimationCnfg>("CoinsAnimations");
+            PlayerView = References.GetPlayer;
 
-            PlayerView = new PlayerView(new Health(100), 35.0f);
             ContactsDetector = new ContactsDetector(PlayerView.CharacterCollider);
             PlayerSpriteAnimator = new SpriteAnimator(configPlayerAnimation, 5.0f);
-            PlayerModel = new PhysicsMovement(PlayerView.CharacterRigidbody, PlayerSpriteAnimator, ContactsDetector, PlayerView.CharacterSpriteRenderer);
-            InputController = new InputController(PlayerModel, PlayerView);
+            PlayerMovement = new PhysicsMovement(PlayerView.CharacterRigidbody, PlayerSpriteAnimator, ContactsDetector, PlayerView.CharacterSpriteRenderer);
+            InputController = new InputController(PlayerMovement, PlayerView);
 
             CoinsSpriteAnimator = new SpriteAnimator(configCoinsAnimation, 10.0f);
-            CoinManager = new CoinManager(PlayerView, new List<LevelObjectView>(), CoinsSpriteAnimator);
+            CoinManager = new CoinManager(PlayerView, References.GetCoins, CoinsSpriteAnimator);
 
-            CameraController = new CameraController(PlayerView.CharacterTransform, camera);
+            CameraController = new CameraController(PlayerView.transform, camera);
 
             CannonView = new CannonView();
 
-            CannonBurrel = new CannonBurrel(CannonView, PlayerView.PlayerGameObject.transform, new BulletPool(new List<BulletView>(5), new PhysicBullet(new BulletView()), CannonView._cannonBarrel));
+            CannonBurrel = new CannonBurrel(CannonView, PlayerView.transform, new BulletPool(bulletViews, bulletType, CannonView._cannonBarrel));
 
             CannonController = new CannonController(CannonBurrel, CannonView);
 
