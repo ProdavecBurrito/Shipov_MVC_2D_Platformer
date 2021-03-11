@@ -8,6 +8,8 @@ namespace Shipov_Platformer_MVC
         private PlayerView _playerView;
         private List<LevelObjectView> _coins;
         private List<BulletView> _bullets;
+        private List<DeathTrigger> _deathTriggers;
+        private List<WinTrigger> _winTriggers;
 
         public PlayerView GetPlayer
         {
@@ -58,6 +60,40 @@ namespace Shipov_Platformer_MVC
                     }
                 }
                 return _bullets;
+            }
+        }
+
+        public List<DeathTrigger> GetDeathTriggers
+        {
+            get
+            {
+                if (_deathTriggers == null)
+                {
+                    _deathTriggers = new List<DeathTrigger>();
+                    var inst = GameObject.FindObjectsOfType<DeathTrigger>();
+                    foreach (var item in inst)
+                    {
+                        _deathTriggers.Add(item);
+                    }
+                }
+                return _deathTriggers;
+            }
+        }
+
+        public List<WinTrigger> GetWindZones
+        {
+            get
+            {
+                if (_winTriggers == null)
+                {
+                    _winTriggers = new List<WinTrigger>();
+                    var inst = GameObject.FindObjectsOfType<WinTrigger>();
+                    foreach (var item in inst)
+                    {
+                        _winTriggers.Add(item);
+                    }
+                }
+                return _winTriggers;
             }
         }
     }

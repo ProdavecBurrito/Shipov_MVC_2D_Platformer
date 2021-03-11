@@ -139,7 +139,7 @@ MonoBehaviour:
   CharacterRigidbody: {fileID: 0}
   CharacterSpriteRenderer: {fileID: 0}
   CharacterCollider: {fileID: 0}
-  Speed: 50
+  Speed: 250
   JumpForce: 5
 --- !u!70 &324476373165552461
 CapsuleCollider2D:

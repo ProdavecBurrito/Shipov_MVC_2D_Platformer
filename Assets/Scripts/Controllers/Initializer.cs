@@ -9,6 +9,7 @@ namespace Shipov_Platformer_MVC
         public ParalaxManager ParalaxManager { get; private set; }
         public InputController InputController { get; private set; }
         public PlayerView PlayerView { get; private set; }
+        public LevelManager LevelManager { get; private set; }
         public SpriteAnimator PlayerSpriteAnimator { get; private set; }
         public SpriteAnimator CoinsSpriteAnimator { get; private set; }
         public CameraController CameraController { get; private set; }
@@ -22,6 +23,7 @@ namespace Shipov_Platformer_MVC
 
         public Initializer(Transform camera, Transform backGround)
         {
+
             var bulletType = "PhysicBullet";
             References = new References();
             var bulletViews = References.GetBulletViews;
@@ -34,6 +36,8 @@ namespace Shipov_Platformer_MVC
             PlayerSpriteAnimator = new SpriteAnimator(configPlayerAnimation, 5.0f);
             PlayerMovement = new PhysicsMovement(PlayerView.CharacterRigidbody, PlayerSpriteAnimator, ContactsDetector, PlayerView.CharacterSpriteRenderer);
             InputController = new InputController(PlayerMovement, PlayerView);
+
+            LevelManager = new LevelManager(PlayerView, References.GetDeathTriggers, References.GetWindZones);
 
             CoinsSpriteAnimator = new SpriteAnimator(configCoinsAnimation, 10.0f);
             CoinManager = new CoinManager(PlayerView, References.GetCoins, CoinsSpriteAnimator);
