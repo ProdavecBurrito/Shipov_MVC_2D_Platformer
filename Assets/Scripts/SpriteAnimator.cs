@@ -6,9 +6,10 @@ namespace Shipov_Platformer_MVC
 {
     public class SpriteAnimator : IUpdate, IDisposable
     {
+        private float _speed;
+
         private SpriteAnimationCnfg _config;
         private Dictionary<SpriteRenderer, CharacterAnimation> _activeAnimations = new Dictionary<SpriteRenderer, CharacterAnimation>();
-        private float _speed;
 
         public SpriteAnimator(SpriteAnimationCnfg config, float speed)
         {
@@ -25,13 +26,14 @@ namespace Shipov_Platformer_MVC
             }
         }
 
-        public void StartAnimation(SpriteRenderer spriteRenderer , CharacterBehavior bahaviorAnimation, bool loop)
+        public void StartAnimation(SpriteRenderer spriteRenderer, CharacterBehavior bahaviorAnimation, bool loop)
         {
             if (_activeAnimations.TryGetValue(spriteRenderer, out var animation))
             {
                 animation.Loop = loop;
                 animation.Speed = _speed;
                 animation.Sleeps = false;
+
                 if (animation.BahaviorAnimation != bahaviorAnimation)
                 {
                     animation.BahaviorAnimation = bahaviorAnimation;

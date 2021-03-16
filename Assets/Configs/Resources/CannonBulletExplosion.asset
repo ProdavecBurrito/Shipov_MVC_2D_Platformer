@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce8bcfcaba48a4c4c8fc782a5058f375, type: 3}
+  m_Name: CannonBulletExplosion
+  m_EditorClassIdentifier: 
+  SpriteSet:
+  - CharacterBehavior: 1
+    Sprites:
+    - {fileID: 0}
+    - {fileID: 21300008, guid: bf8ddafe189b90247b484ca8b8e3ceca, type: 3}
+    - {fileID: 21300010, guid: bf8ddafe189b90247b484ca8b8e3ceca, type: 3}
+    - {fileID: 21300012, guid: bf8ddafe189b90247b484ca8b8e3ceca, type: 3}
+    - {fileID: 21300014, guid: bf8ddafe189b90247b484ca8b8e3ceca, type: 3}
+    - {fileID: 21300016, guid: bf8ddafe189b90247b484ca8b8e3ceca, type: 3}
+    - {fileID: 21300018, guid: bf8ddafe189b90247b484ca8b8e3ceca, type: 3}
+    - {fileID: 21300020, guid: bf8ddafe189b90247b484ca8b8e3ceca, type: 3}
+    - {fileID: 21300022, guid: bf8ddafe189b90247b484ca8b8e3ceca, type: 3}
+    - {fileID: 0}

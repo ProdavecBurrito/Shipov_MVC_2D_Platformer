@@ -61,7 +61,14 @@ namespace Shipov_Platformer_MVC
 
         public void UpdateBullets()
         {
-            _bullets.ForEach(b => b.Fly());
+            for (int i = 0; i < _bullets.Count; i++)
+            {
+                if (_bullets[i].GetBulletView.IsVisible)
+                {
+                    _bullets[i].Fly();
+                }
+            }
+            //_bullets.ForEach(b => b.Fly());
         }
 
         public void AddNewBullet()

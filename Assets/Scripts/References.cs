@@ -5,11 +5,17 @@ namespace Shipov_Platformer_MVC
 {
     public class References
     {
+        private const int BULLETS_COUNT = 5;
+
         private PlayerView _playerView;
         private List<LevelObjectView> _coins;
         private List<BulletView> _bullets;
         private List<DeathTrigger> _deathTriggers;
         private List<WinTrigger> _winTriggers;
+        private List<ExplosionView> _cannonExplosions;
+        private List<SpriteAnimator> _explosionsSpriteAnimators;
+
+        public List<SpriteAnimator> GetExposionsSpriteAnimators => _explosionsSpriteAnimators;
 
         public PlayerView GetPlayer
         {
@@ -51,7 +57,7 @@ namespace Shipov_Platformer_MVC
             {
                 if (_bullets == null)
                 {
-                    _bullets = new List<BulletView>(5);
+                    _bullets = new List<BulletView>(BULLETS_COUNT);
                     for (int i = 0; i < _bullets.Capacity; i++)
                     {
                         var bullet = Resources.Load<BulletView>("CannonBullet");
@@ -96,5 +102,37 @@ namespace Shipov_Platformer_MVC
                 return _winTriggers;
             }
         }
+
+        public List<ExplosionView> GetCannonExplosions
+        {
+            get
+            {
+                if (_cannonExplosions == null)
+                {
+                    _cannonExplosions = new List<ExplosionView>(BULLETS_COUNT);
+                    for (int i = 0; i < _bullets.Capacity; i++)
+                    {
+                        var explosion = Resources.Load<ExplosionView>("CannonBulletExplosion");
+                        var explosionInst = Object.Instantiate(explosion);
+                        _cannonExplosions.Add(explosionInst);
+                    }
+                }
+                return _cannonExplosions;
+            }
+        }
+
+        public List<SpriteAnimator> GetExplosionAnimators(SpriteAnimationCnfg spriteAnimationCnfg)
+        {
+            if (_explosionsSpriteAnimators == null)
+            {
+                _explosionsSpriteAnimators = new List<SpriteAnimator>(BULLETS_COUNT);
+                for (int i = 0; i < _explosionsSpriteAnimators.Capacity; i++)
+                {
+                    _explosionsSpriteAnimators.Add(new SpriteAnimator(spriteAnimationCnfg, 10.0f));
+                }
+            }
+            return _explosionsSpriteAnimators;
+        }
+
     }
 }

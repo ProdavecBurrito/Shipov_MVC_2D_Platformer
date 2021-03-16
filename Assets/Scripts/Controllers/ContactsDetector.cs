@@ -5,8 +5,9 @@ namespace Shipov_Platformer_MVC
     public class ContactsDetector : IUpdate
     {
         private const float _collisionThresh = 0.5f;
+        private const int CONTACTS = 10;
 
-        private ContactPoint2D[] _contacts = new ContactPoint2D[10];
+        private ContactPoint2D[] _contacts = new ContactPoint2D[CONTACTS];
         private readonly Collider2D _collider2D;
 
         private int _contactsCount = 0;
