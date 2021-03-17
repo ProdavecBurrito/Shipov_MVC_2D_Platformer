@@ -1,16 +1,15 @@
 using System.Collections.Generic;
-using UnityEngine;
 using System;
 
 namespace Shipov_Platformer_MVC
 {
-    public class ExplosionsPool : IDisposable
+    public class ExplosionsInitializer : IDisposable
     {
         private List<ExplosionView> _explosions;
         private List<SpriteAnimator> _spriteAnimators;
         private List<BulletView> _startPos;
 
-        public ExplosionsPool(List<ExplosionView> explosions, List<BulletView> startPos, List<SpriteAnimator> spriteAnimators)
+        public ExplosionsInitializer(List<ExplosionView> explosions, List<BulletView> startPos, List<SpriteAnimator> spriteAnimators)
         {
             _explosions = explosions;
             _spriteAnimators = spriteAnimators;

@@ -5,7 +5,7 @@ namespace Shipov_Platformer_MVC
 {
     public class Initializer
     {
-        public ExplosionsPool ExplosionsPool { get; private set; }
+        public ExplosionsInitializer ExplosionsPool { get; private set; }
         public References References { get; private set; }
         public ParalaxManager ParalaxManager { get; private set; }
         public InputController InputController { get; private set; }
@@ -55,7 +55,7 @@ namespace Shipov_Platformer_MVC
 
             ParalaxManager = new ParalaxManager(camera, backGround);
 
-            ExplosionsPool = new ExplosionsPool(References.GetCannonExplosions, References.GetBulletViews, References.GetExplosionAnimators(configBulletExplosions));
+            ExplosionsPool = new ExplosionsInitializer(References.GetCannonExplosions, References.GetBulletViews, References.GetExplosionAnimators(configBulletExplosions));
         }
     }
 }
