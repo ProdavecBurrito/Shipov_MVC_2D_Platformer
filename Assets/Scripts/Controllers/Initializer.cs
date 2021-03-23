@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+using LevelGenerator;
 using UnityEngine;
 
 namespace Shipov_Platformer_MVC
@@ -21,6 +21,8 @@ namespace Shipov_Platformer_MVC
         public CoinManager CoinManager { get; private set; }
 
         public IMovement PlayerMovement { get; private set; }
+
+        public GeneratingLevelController GeneratingLevelController { get; private set; }
 
         public Initializer(Transform camera, Transform backGround)
         {
@@ -56,6 +58,8 @@ namespace Shipov_Platformer_MVC
             ParalaxManager = new ParalaxManager(camera, backGround);
 
             ExplosionsPool = new ExplosionsInitializer(References.GetCannonExplosions, References.GetBulletViews, References.GetExplosionAnimators(configBulletExplosions));
+
+            GeneratingLevelController = new GeneratingLevelController(GameObject.FindObjectOfType<GeneratingLevelView>());
         }
     }
 }
