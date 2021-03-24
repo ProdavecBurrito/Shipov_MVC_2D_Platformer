@@ -6,8 +6,10 @@ namespace LevelGenerator
     public class GeneratingLevelView : MonoBehaviour
     {
         [SerializeField] private Tilemap _tileMapGround;
+        [SerializeField] private Tilemap _tileMapWater;
 
-        [SerializeField] private Tile _tileGround;
+        [SerializeField] private Tile _groundTile;
+        [SerializeField] private Tile _waterTile;
 
         [SerializeField] private int _mapWidth;
 
@@ -19,8 +21,10 @@ namespace LevelGenerator
         [SerializeField] private int _randomFillPercent;
 
         public Tilemap TileMapGround => _tileMapGround;
+        public Tilemap TileMapWater => _tileMapWater;
 
-        public Tile TileGround => _tileGround;
+        public Tile GroundTile => _groundTile;
+        public Tile WaterTile => _waterTile;
 
         public int MapWidth => _mapWidth;
 

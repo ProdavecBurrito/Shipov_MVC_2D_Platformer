@@ -41,7 +41,6 @@ namespace Shipov_Platformer_MVC
             }
             else
             {
-                Debug.Log("1");
                 _model.GetClosestTarget(_view.CharacterTransform.position);
             }
         }

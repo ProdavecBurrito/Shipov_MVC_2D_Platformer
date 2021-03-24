@@ -5,10 +5,18 @@ namespace LevelGenerator
 {
     public class GeneratingLevelController
     {
-        private const int CountWall = 4;
+        private const int NOTHING_NUMBER = 0;
+        private const int GROUND_NUMBER = 1;
+        private const int WATER_NUMBER = 2;
+        private const int X_EXIT = 6;
+        private const int Y_EXIT = 7;
+
+        private const int GroundBlocksCount = 4;
 
         private Tilemap _tileMapGround;
-        private Tile _tileGround;
+        private Tilemap _tileMapWater;
+        private Tile _groundTile;
+        private Tile _waterTile;
         private int _mapWidth;
         private int _mapHeight;
         private int _smoothFactor;
@@ -19,7 +27,9 @@ namespace LevelGenerator
         public GeneratingLevelController(GeneratingLevelView generateLevelView)
         {
             _tileMapGround = generateLevelView.TileMapGround;
-            _tileGround = generateLevelView.TileGround;
+            _tileMapWater = generateLevelView.TileMapWater;
+            _groundTile = generateLevelView.GroundTile;
+            _waterTile = generateLevelView.WaterTile;
             _mapWidth = generateLevelView.MapWidth;
             _mapHeight = generateLevelView.MapHeight;
             _smoothFactor = generateLevelView.FactorSmooth;
@@ -28,7 +38,7 @@ namespace LevelGenerator
             _map = new int[_mapWidth, _mapHeight];
         }
 
-        public void AwakeTick()
+        public void StartGeneration()
         {
             GenerateLevel();
         }
@@ -49,15 +59,35 @@ namespace LevelGenerator
         {
             var seed = Time.time.ToString();
             var pseudoRandom = new System.Random(seed.GetHashCode());
+            var randomTile = new System.Random();
 
             for (var x = 0; x < _mapWidth; x++)
             {
                 for (var y = 0; y < _mapHeight; y++)
                 {
-                    if (x == 0 || x == _mapWidth - 1 || y == 0 || y == _mapHeight - 1)
-                        _map[x, y] = 1;
+                    if (x == X_EXIT && y == _mapHeight - 1 || x == 0 && y == Y_EXIT)
+                    {
+                        _map[x, y] = NOTHING_NUMBER;
+                    }
+                    else if (x == 0 || x == _mapWidth - 1 || y == 0 || y == _mapHeight - 1)
+                    {
+                        _map[x, y] = GROUND_NUMBER;
+                    }
                     else
-                        _map[x, y] = (pseudoRandom.Next(0, 100) < _randomFillPercent) ? 1 : 0;
+                    {
+                        if (pseudoRandom.Next(0, 100) < _randomFillPercent)
+                        {
+                            if (randomTile.Next(GROUND_NUMBER, 3) == GROUND_NUMBER)
+                            {
+                                _map[x, y] = GROUND_NUMBER;
+                            }
+                            else
+                            {
+                                _map[x, y] = WATER_NUMBER;
+                            }
+                        }
+
+                    }
                 }
             }
         }
@@ -70,10 +100,14 @@ namespace LevelGenerator
                 {
                     var neighbourWallTiles = GetSurroundingWallCount(x, y);
 
-                    if (neighbourWallTiles > CountWall)
-                        _map[x, y] = 1;
-                    else if (neighbourWallTiles < CountWall)
-                        _map[x, y] = 0;
+                    if (neighbourWallTiles > GroundBlocksCount)
+                    {
+                        _map[x, y] = GROUND_NUMBER;
+                    }
+                    else if (neighbourWallTiles < GroundBlocksCount)
+                    {
+                        _map[x, y] = NOTHING_NUMBER;
+                    }
                 }
             }
         }
@@ -89,7 +123,9 @@ namespace LevelGenerator
                     if (neighbourX >= 0 && neighbourX < _mapWidth && neighbourY >= 0 && neighbourY < _mapHeight)
                     {
                         if (neighbourX != gridX || neighbourY != gridY)
+                        {
                             wallCount += _map[neighbourX, neighbourY];
+                        }
                     }
                     else
                     {
@@ -114,9 +150,14 @@ namespace LevelGenerator
                 {
                     var positionTile = new Vector3Int(-_mapWidth / 2 + x, -_mapHeight / 2 + y, 0);
 
-                    if (_map[x, y] == 1)
+                    if (_map[x, y] == GROUND_NUMBER)
                     {
-                        _tileMapGround.SetTile(positionTile, _tileGround);
+                        _tileMapGround.SetTile(positionTile, _groundTile);
+                    }
+
+                    if (_map[x,y] == WATER_NUMBER)
+                    {
+                        _tileMapWater.SetTile(positionTile, _waterTile);
                     }
                 }
             }
