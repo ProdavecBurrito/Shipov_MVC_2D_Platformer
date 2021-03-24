@@ -33,6 +33,8 @@ namespace Shipov_Platformer_MVC
             }
 
             _fixedUpdatingObjects.AddUpdatingObject(_initializer.CameraController);
+
+            _initializer.GeneratingLevelController.StartGeneration();
         }
 
         void Update()
