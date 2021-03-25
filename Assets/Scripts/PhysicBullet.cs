@@ -13,10 +13,10 @@ namespace Shipov_Platformer_MVC
             _currentTime = 0;
             _view.CharacterTransform.position = fireStartTransform.GetChild(0).transform.position;
             _view.CharacterTransform.rotation = fireStartTransform.rotation;
-            _view.BulletRigidBody.velocity = Vector2.zero;
-            _view.BulletRigidBody.angularVelocity = 0;
+            _view.CharacterRigidbody.velocity = Vector2.zero;
+            _view.CharacterRigidbody.angularVelocity = 0;
             _view.SetVisible(true);
-            _view.BulletRigidBody.AddForce(velocity, ForceMode2D.Impulse);
+            _view.CharacterRigidbody.AddForce(velocity, ForceMode2D.Impulse);
         }
 
         public override void Fly()
@@ -27,7 +27,7 @@ namespace Shipov_Platformer_MVC
             }
             else
             {
-                _view.SetVisible(false);
+                ReturnToPool();
             }
         }
     }

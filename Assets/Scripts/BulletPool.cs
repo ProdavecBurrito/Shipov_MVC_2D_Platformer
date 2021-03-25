@@ -8,30 +8,23 @@ namespace Shipov_Platformer_MVC
         private const float DELAY = 2;
         private const float START_SPEED = 5;
 
-        private List<BaseBullet> _bullets = new List<BaseBullet>();
+        private List<BaseBullet> _bullets;
         private Transform _fireStartPosition;
 
         private int _currentIndex;
         private float _timeTillNextBullet;
 
-        public BulletPool(List<BulletView> bulletViews, BaseBullet bulletType, Transform startPos)
+        public BulletPool(List<BulletView> bulletViews, string bulletType, Transform startPos)
         {
-            if (bulletViews.Count != bulletViews.Capacity)
-            {
-                for (int i = 0; i < bulletViews.Capacity; i++)
-                {
-                    bulletViews.Add(new BulletView());
-                }
-            }
+            _bullets = new List<BaseBullet>();
 
-            foreach (var bulletView in bulletViews) // Мне кажется, так и тут - не совсем корректно. + происходит что то странное.
-                                                    // При попадании в землю - снаряд, почему то, уничтожается. Не смог понять почему
+            foreach (var bulletView in bulletViews) // Мне кажется, тут не совсем корректно
             {
-                if (bulletType is NonPhysicBullet)
+                if (bulletType == "NonPhysicBullet")
                 {
                     _bullets.Add(new NonPhysicBullet(bulletView));
                 }
-                if (bulletType is PhysicBullet)
+                if (bulletType == "PhysicBullet")
                 {
                     _bullets.Add(new PhysicBullet(bulletView));
                 }
@@ -41,7 +34,7 @@ namespace Shipov_Platformer_MVC
             _fireStartPosition = startPos;
         }
 
-        public void TryAttack()
+        public void TryLaunchBullet()
         {
             if (_timeTillNextBullet > 0)
             {

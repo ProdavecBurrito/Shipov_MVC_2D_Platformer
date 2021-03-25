@@ -9,7 +9,7 @@ namespace Shipov_Platformer_MVC
         private ContactPoint2D[] _contacts = new ContactPoint2D[10];
         private readonly Collider2D _collider2D;
 
-        private int _contactsCount;
+        private int _contactsCount = 0;
 
         public bool IsGrounded { get; private set; }
         public bool HasLeftContacts { get; private set; }

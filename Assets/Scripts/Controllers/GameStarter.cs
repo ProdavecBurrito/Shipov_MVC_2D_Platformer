@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Shipov_Platformer_MVC
@@ -7,12 +8,15 @@ namespace Shipov_Platformer_MVC
         [SerializeField] private Camera _mainCamera;
         [SerializeField] private Transform _backGround;
 
+        private LevelObjectView[] levelObjectViews;
+        private List<LevelObjectView> levelObjects;
         private UpdatingObjects<IUpdate> _updatingObjects;
         private UpdatingObjects<IFixedUpdate> _fixedUpdatingObjects;
         private Initializer _initializer;
 
         void Awake()
         {
+
             _updatingObjects = new UpdatingObjects<IUpdate>();
             _fixedUpdatingObjects = new UpdatingObjects<IFixedUpdate>();
             _initializer = new Initializer(_mainCamera.transform, _backGround);

@@ -46,14 +46,12 @@ namespace Shipov_Platformer_MVC
 
         public void Attack()
         {
-            _bulletPool.TryAttack();
+            _bulletPool.TryLaunchBullet();
         }
 
         public void StopAttack()
         {
             _muzzleTransform.localEulerAngles = _startRotationPos;
         }
-
-
     }
 }

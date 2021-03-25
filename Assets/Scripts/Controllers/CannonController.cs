@@ -18,7 +18,7 @@ namespace Shipov_Platformer_MVC
             if (_cannonBurrel.IsFoundTarget())
             {
                 _cannonBurrel.FollowTarget();
-                //_cannonBurrel.Attack();
+                _cannonBurrel.Attack();
             }
             else
             {

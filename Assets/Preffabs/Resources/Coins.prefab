@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 75981787646871797}
   - component: {fileID: 75981787646871796}
   - component: {fileID: 6558916721656538486}
-  m_Layer: 9
+  - component: {fileID: 422454709004315598}
+  m_Layer: 0
   m_Name: spin-h01-128 (15)
-  m_TagString: Untagged
+  m_TagString: Usable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -99,6 +100,23 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.32
+--- !u!114 &422454709004315598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 75981787646871799}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4096a86155f87b748a553f94df5ffd32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CharacterTransform: {fileID: 0}
+  CharacterRigidbody: {fileID: 0}
+  CharacterSpriteRenderer: {fileID: 0}
+  CharacterCollider: {fileID: 0}
+  TargetCollider: {fileID: 0}
 --- !u!1 &75981787701925870
 GameObject:
   m_ObjectHideFlags: 0
@@ -110,9 +128,10 @@ GameObject:
   - component: {fileID: 75981787701925868}
   - component: {fileID: 75981787701925871}
   - component: {fileID: 9086065084592120416}
-  m_Layer: 9
+  - component: {fileID: 2547313895856231835}
+  m_Layer: 0
   m_Name: spin-h01-128 (8)
-  m_TagString: Untagged
+  m_TagString: Usable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -198,6 +217,23 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.32
+--- !u!114 &2547313895856231835
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 75981787701925870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4096a86155f87b748a553f94df5ffd32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CharacterTransform: {fileID: 0}
+  CharacterRigidbody: {fileID: 0}
+  CharacterSpriteRenderer: {fileID: 0}
+  CharacterCollider: {fileID: 0}
+  TargetCollider: {fileID: 0}
 --- !u!1 &75981787722604783
 GameObject:
   m_ObjectHideFlags: 0
@@ -209,9 +245,10 @@ GameObject:
   - component: {fileID: 75981787722604781}
   - component: {fileID: 75981787722604780}
   - component: {fileID: 7951559057654067037}
-  m_Layer: 9
+  - component: {fileID: 4198847922918174479}
+  m_Layer: 0
   m_Name: spin-h01-128 (14)
-  m_TagString: Untagged
+  m_TagString: Usable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -297,6 +334,23 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.32
+--- !u!114 &4198847922918174479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 75981787722604783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4096a86155f87b748a553f94df5ffd32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CharacterTransform: {fileID: 0}
+  CharacterRigidbody: {fileID: 0}
+  CharacterSpriteRenderer: {fileID: 0}
+  CharacterCollider: {fileID: 0}
+  TargetCollider: {fileID: 0}
 --- !u!1 &75981787834920223
 GameObject:
   m_ObjectHideFlags: 0
@@ -308,9 +362,10 @@ GameObject:
   - component: {fileID: 75981787834920221}
   - component: {fileID: 75981787834920220}
   - component: {fileID: 6604724159605343694}
-  m_Layer: 9
+  - component: {fileID: 6872023605489737020}
+  m_Layer: 0
   m_Name: spin-h01-128 (16)
-  m_TagString: Untagged
+  m_TagString: Usable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -396,6 +451,23 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.32
+--- !u!114 &6872023605489737020
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 75981787834920223}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4096a86155f87b748a553f94df5ffd32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CharacterTransform: {fileID: 0}
+  CharacterRigidbody: {fileID: 0}
+  CharacterSpriteRenderer: {fileID: 0}
+  CharacterCollider: {fileID: 0}
+  TargetCollider: {fileID: 0}
 --- !u!1 &75981787868278619
 GameObject:
   m_ObjectHideFlags: 0
@@ -407,9 +479,10 @@ GameObject:
   - component: {fileID: 75981787868278617}
   - component: {fileID: 75981787868278616}
   - component: {fileID: 75707644195991087}
-  m_Layer: 9
+  - component: {fileID: 1444597973006635297}
+  m_Layer: 0
   m_Name: spin-h01-128 (3)
-  m_TagString: Untagged
+  m_TagString: Usable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -495,6 +568,23 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.32
+--- !u!114 &1444597973006635297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 75981787868278619}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4096a86155f87b748a553f94df5ffd32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CharacterTransform: {fileID: 0}
+  CharacterRigidbody: {fileID: 0}
+  CharacterSpriteRenderer: {fileID: 0}
+  CharacterCollider: {fileID: 0}
+  TargetCollider: {fileID: 0}
 --- !u!1 &75981787980789151
 GameObject:
   m_ObjectHideFlags: 0
@@ -506,9 +596,10 @@ GameObject:
   - component: {fileID: 75981787980789149}
   - component: {fileID: 75981787980789148}
   - component: {fileID: 231165065600184543}
-  m_Layer: 9
+  - component: {fileID: 3331148619622354337}
+  m_Layer: 0
   m_Name: spin-h01-128 (13)
-  m_TagString: Untagged
+  m_TagString: Usable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -594,6 +685,23 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.32
+--- !u!114 &3331148619622354337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 75981787980789151}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4096a86155f87b748a553f94df5ffd32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CharacterTransform: {fileID: 0}
+  CharacterRigidbody: {fileID: 0}
+  CharacterSpriteRenderer: {fileID: 0}
+  CharacterCollider: {fileID: 0}
+  TargetCollider: {fileID: 0}
 --- !u!1 &75981788046397946
 GameObject:
   m_ObjectHideFlags: 0
@@ -605,9 +713,10 @@ GameObject:
   - component: {fileID: 75981788046397944}
   - component: {fileID: 75981788046397947}
   - component: {fileID: 4967737366043086379}
-  m_Layer: 9
+  - component: {fileID: 3165930030843138633}
+  m_Layer: 0
   m_Name: spin-h01-128 (1)
-  m_TagString: Untagged
+  m_TagString: Usable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -693,6 +802,23 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.32
+--- !u!114 &3165930030843138633
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 75981788046397946}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4096a86155f87b748a553f94df5ffd32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CharacterTransform: {fileID: 0}
+  CharacterRigidbody: {fileID: 0}
+  CharacterSpriteRenderer: {fileID: 0}
+  CharacterCollider: {fileID: 0}
+  TargetCollider: {fileID: 0}
 --- !u!1 &75981788057062126
 GameObject:
   m_ObjectHideFlags: 0
@@ -755,9 +881,10 @@ GameObject:
   - component: {fileID: 75981788065077327}
   - component: {fileID: 75981788065077326}
   - component: {fileID: 5217098720485103946}
-  m_Layer: 9
+  - component: {fileID: 2778157553272326743}
+  m_Layer: 0
   m_Name: spin-h01-128 (17)
-  m_TagString: Untagged
+  m_TagString: Usable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -843,6 +970,23 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.32
+--- !u!114 &2778157553272326743
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 75981788065077321}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4096a86155f87b748a553f94df5ffd32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CharacterTransform: {fileID: 0}
+  CharacterRigidbody: {fileID: 0}
+  CharacterSpriteRenderer: {fileID: 0}
+  CharacterCollider: {fileID: 0}
+  TargetCollider: {fileID: 0}
 --- !u!1 &75981788083630090
 GameObject:
   m_ObjectHideFlags: 0
@@ -854,9 +998,10 @@ GameObject:
   - component: {fileID: 75981788083630088}
   - component: {fileID: 75981788083630091}
   - component: {fileID: 4201380254658777001}
-  m_Layer: 9
+  - component: {fileID: 1944238727359742826}
+  m_Layer: 0
   m_Name: spin-h01-128 (20)
-  m_TagString: Untagged
+  m_TagString: Usable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -942,6 +1087,23 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.32
+--- !u!114 &1944238727359742826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 75981788083630090}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4096a86155f87b748a553f94df5ffd32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CharacterTransform: {fileID: 0}
+  CharacterRigidbody: {fileID: 0}
+  CharacterSpriteRenderer: {fileID: 0}
+  CharacterCollider: {fileID: 0}
+  TargetCollider: {fileID: 0}
 --- !u!1 &75981788178578787
 GameObject:
   m_ObjectHideFlags: 0
@@ -953,9 +1115,10 @@ GameObject:
   - component: {fileID: 75981788178578785}
   - component: {fileID: 75981788178578784}
   - component: {fileID: 473799658817858222}
-  m_Layer: 9
+  - component: {fileID: 7027402048337248415}
+  m_Layer: 0
   m_Name: spin-h01-128 (18)
-  m_TagString: Untagged
+  m_TagString: Usable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1041,6 +1204,23 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.32
+--- !u!114 &7027402048337248415
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 75981788178578787}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4096a86155f87b748a553f94df5ffd32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CharacterTransform: {fileID: 0}
+  CharacterRigidbody: {fileID: 0}
+  CharacterSpriteRenderer: {fileID: 0}
+  CharacterCollider: {fileID: 0}
+  TargetCollider: {fileID: 0}
 --- !u!1 &75981788261597024
 GameObject:
   m_ObjectHideFlags: 0
@@ -1052,9 +1232,10 @@ GameObject:
   - component: {fileID: 75981788261597030}
   - component: {fileID: 75981788261597025}
   - component: {fileID: 4264012669400946569}
-  m_Layer: 9
+  - component: {fileID: 1279406517889499997}
+  m_Layer: 0
   m_Name: spin-h01-128 (10)
-  m_TagString: Untagged
+  m_TagString: Usable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1140,6 +1321,23 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.32
+--- !u!114 &1279406517889499997
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 75981788261597024}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4096a86155f87b748a553f94df5ffd32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CharacterTransform: {fileID: 0}
+  CharacterRigidbody: {fileID: 0}
+  CharacterSpriteRenderer: {fileID: 0}
+  CharacterCollider: {fileID: 0}
+  TargetCollider: {fileID: 0}
 --- !u!1 &75981788323704740
 GameObject:
   m_ObjectHideFlags: 0
@@ -1151,9 +1349,10 @@ GameObject:
   - component: {fileID: 75981788323704762}
   - component: {fileID: 75981788323704741}
   - component: {fileID: 8125527768685259066}
-  m_Layer: 9
+  - component: {fileID: 4347662571048888750}
+  m_Layer: 0
   m_Name: spin-h01-128 (12)
-  m_TagString: Untagged
+  m_TagString: Usable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1239,6 +1438,23 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.32
+--- !u!114 &4347662571048888750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 75981788323704740}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4096a86155f87b748a553f94df5ffd32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CharacterTransform: {fileID: 0}
+  CharacterRigidbody: {fileID: 0}
+  CharacterSpriteRenderer: {fileID: 0}
+  CharacterCollider: {fileID: 0}
+  TargetCollider: {fileID: 0}
 --- !u!1 &75981788471484916
 GameObject:
   m_ObjectHideFlags: 0
@@ -1250,9 +1466,10 @@ GameObject:
   - component: {fileID: 75981788471484874}
   - component: {fileID: 75981788471484917}
   - component: {fileID: 8206515414771278492}
-  m_Layer: 9
+  - component: {fileID: 7120267335258602328}
+  m_Layer: 0
   m_Name: spin-h01-128 (11)
-  m_TagString: Untagged
+  m_TagString: Usable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1338,6 +1555,23 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.32
+--- !u!114 &7120267335258602328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 75981788471484916}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4096a86155f87b748a553f94df5ffd32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CharacterTransform: {fileID: 0}
+  CharacterRigidbody: {fileID: 0}
+  CharacterSpriteRenderer: {fileID: 0}
+  CharacterCollider: {fileID: 0}
+  TargetCollider: {fileID: 0}
 --- !u!1 &75981788668632058
 GameObject:
   m_ObjectHideFlags: 0
@@ -1349,9 +1583,10 @@ GameObject:
   - component: {fileID: 75981788668632056}
   - component: {fileID: 75981788668632059}
   - component: {fileID: 5366930006992775529}
-  m_Layer: 9
+  - component: {fileID: 1851942575168582876}
+  m_Layer: 0
   m_Name: spin-h01-128 (7)
-  m_TagString: Untagged
+  m_TagString: Usable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1437,6 +1672,23 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.32
+--- !u!114 &1851942575168582876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 75981788668632058}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4096a86155f87b748a553f94df5ffd32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CharacterTransform: {fileID: 0}
+  CharacterRigidbody: {fileID: 0}
+  CharacterSpriteRenderer: {fileID: 0}
+  CharacterCollider: {fileID: 0}
+  TargetCollider: {fileID: 0}
 --- !u!1 &75981788723885313
 GameObject:
   m_ObjectHideFlags: 0
@@ -1448,9 +1700,10 @@ GameObject:
   - component: {fileID: 75981788723885319}
   - component: {fileID: 75981788723885318}
   - component: {fileID: 9082148235862802490}
-  m_Layer: 9
+  - component: {fileID: 8575808139586638008}
+  m_Layer: 0
   m_Name: spin-h01-128 (9)
-  m_TagString: Untagged
+  m_TagString: Usable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1536,6 +1789,23 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.32
+--- !u!114 &8575808139586638008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 75981788723885313}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4096a86155f87b748a553f94df5ffd32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CharacterTransform: {fileID: 0}
+  CharacterRigidbody: {fileID: 0}
+  CharacterSpriteRenderer: {fileID: 0}
+  CharacterCollider: {fileID: 0}
+  TargetCollider: {fileID: 0}
 --- !u!1 &75981788947559855
 GameObject:
   m_ObjectHideFlags: 0
@@ -1547,9 +1817,10 @@ GameObject:
   - component: {fileID: 75981788947559853}
   - component: {fileID: 75981788947559852}
   - component: {fileID: 5107997348427676259}
-  m_Layer: 9
+  - component: {fileID: 9032663374538143656}
+  m_Layer: 0
   m_Name: spin-h01-128 (5)
-  m_TagString: Untagged
+  m_TagString: Usable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1635,6 +1906,23 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.32
+--- !u!114 &9032663374538143656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 75981788947559855}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4096a86155f87b748a553f94df5ffd32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CharacterTransform: {fileID: 0}
+  CharacterRigidbody: {fileID: 0}
+  CharacterSpriteRenderer: {fileID: 0}
+  CharacterCollider: {fileID: 0}
+  TargetCollider: {fileID: 0}
 --- !u!1 &75981788969377678
 GameObject:
   m_ObjectHideFlags: 0
@@ -1646,9 +1934,10 @@ GameObject:
   - component: {fileID: 75981788969377676}
   - component: {fileID: 75981788969377679}
   - component: {fileID: 8669273330923308771}
-  m_Layer: 9
+  - component: {fileID: 7585911650497671737}
+  m_Layer: 0
   m_Name: spin-h01-128 (19)
-  m_TagString: Untagged
+  m_TagString: Usable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1734,6 +2023,23 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.32
+--- !u!114 &7585911650497671737
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 75981788969377678}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4096a86155f87b748a553f94df5ffd32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CharacterTransform: {fileID: 0}
+  CharacterRigidbody: {fileID: 0}
+  CharacterSpriteRenderer: {fileID: 0}
+  CharacterCollider: {fileID: 0}
+  TargetCollider: {fileID: 0}
 --- !u!1 &75981789338146429
 GameObject:
   m_ObjectHideFlags: 0
@@ -1745,9 +2051,10 @@ GameObject:
   - component: {fileID: 75981789338146419}
   - component: {fileID: 75981789338146418}
   - component: {fileID: 1306802192417599305}
-  m_Layer: 9
+  - component: {fileID: 3339566925188182990}
+  m_Layer: 0
   m_Name: spin-h01-128 (6)
-  m_TagString: Untagged
+  m_TagString: Usable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1833,6 +2140,23 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.32
+--- !u!114 &3339566925188182990
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 75981789338146429}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4096a86155f87b748a553f94df5ffd32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CharacterTransform: {fileID: 0}
+  CharacterRigidbody: {fileID: 0}
+  CharacterSpriteRenderer: {fileID: 0}
+  CharacterCollider: {fileID: 0}
+  TargetCollider: {fileID: 0}
 --- !u!1 &75981789338975781
 GameObject:
   m_ObjectHideFlags: 0
@@ -1844,9 +2168,10 @@ GameObject:
   - component: {fileID: 75981789338975803}
   - component: {fileID: 75981789338975802}
   - component: {fileID: 1395203663669607489}
-  m_Layer: 9
+  - component: {fileID: 4157859536190230110}
+  m_Layer: 0
   m_Name: spin-h01-128
-  m_TagString: Untagged
+  m_TagString: Usable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1932,6 +2257,23 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.32
+--- !u!114 &4157859536190230110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 75981789338975781}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4096a86155f87b748a553f94df5ffd32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CharacterTransform: {fileID: 0}
+  CharacterRigidbody: {fileID: 0}
+  CharacterSpriteRenderer: {fileID: 0}
+  CharacterCollider: {fileID: 0}
+  TargetCollider: {fileID: 0}
 --- !u!1 &75981789496784365
 GameObject:
   m_ObjectHideFlags: 0
@@ -1943,9 +2285,10 @@ GameObject:
   - component: {fileID: 75981789496784355}
   - component: {fileID: 75981789496784354}
   - component: {fileID: 420510469429259076}
-  m_Layer: 9
+  - component: {fileID: 8956300777393093107}
+  m_Layer: 0
   m_Name: spin-h01-128 (2)
-  m_TagString: Untagged
+  m_TagString: Usable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2031,6 +2374,23 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.32
+--- !u!114 &8956300777393093107
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 75981789496784365}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4096a86155f87b748a553f94df5ffd32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CharacterTransform: {fileID: 0}
+  CharacterRigidbody: {fileID: 0}
+  CharacterSpriteRenderer: {fileID: 0}
+  CharacterCollider: {fileID: 0}
+  TargetCollider: {fileID: 0}
 --- !u!1 &75981789667276482
 GameObject:
   m_ObjectHideFlags: 0
@@ -2042,9 +2402,10 @@ GameObject:
   - component: {fileID: 75981789667276480}
   - component: {fileID: 75981789667276483}
   - component: {fileID: 3263604956387904076}
-  m_Layer: 9
+  - component: {fileID: 4990440073952640500}
+  m_Layer: 0
   m_Name: spin-h01-128 (4)
-  m_TagString: Untagged
+  m_TagString: Usable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2130,3 +2491,20 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.32
+--- !u!114 &4990440073952640500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 75981789667276482}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4096a86155f87b748a553f94df5ffd32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CharacterTransform: {fileID: 0}
+  CharacterRigidbody: {fileID: 0}
+  CharacterSpriteRenderer: {fileID: 0}
+  CharacterCollider: {fileID: 0}
+  TargetCollider: {fileID: 0}

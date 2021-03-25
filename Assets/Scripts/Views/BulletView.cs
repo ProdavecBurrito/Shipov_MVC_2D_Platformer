@@ -6,20 +6,16 @@ namespace Shipov_Platformer_MVC
     {
         private TrailRenderer _trail;
 
-        public GameObject BulletGameObject;
-        public GroundChecker GroundChecker;
-        public Rigidbody2D BulletRigidBody;
+        private int _damage = 25;
 
         public bool IsVisible;
 
-        public BulletView()
+        private void Start()
         {
             IsVisible = false;
-            BulletGameObject = LoadingGOFactory.Create("CannonBullet");
-            CharacterTransform = BulletGameObject.transform;
-            CharacterSpriteRenderer = BulletGameObject.GetComponent<SpriteRenderer>();
-            _trail = BulletGameObject.GetComponent<TrailRenderer>();
-            BulletRigidBody = BulletGameObject.GetComponent<Rigidbody2D>();
+            _trail = GetComponent<TrailRenderer>();
+            CharacterTransform = GetComponent<Transform>();
+            CharacterRigidbody = GetComponent<Rigidbody2D>();
         }
 
         public void SetVisible(bool visible)
@@ -37,5 +33,15 @@ namespace Shipov_Platformer_MVC
             CharacterSpriteRenderer.enabled = visible;
         }
 
+        private void OnTriggerEnter2D(Collider2D collision)
+        {
+            if (collision.CompareTag("Player"))
+            {
+                var player = collision.GetComponent<PlayerView>();
+                player.Health.GetGamage(_damage);
+                SetVisible(false);
+                Debug.Log(player.Health.CharacteHealth);
+            }
+        }
     }
 }
