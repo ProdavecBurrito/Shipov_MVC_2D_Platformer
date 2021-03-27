@@ -4,10 +4,13 @@ namespace Shipov_Platformer_MVC
 {
     public class PlayerView : LevelObjectView
     {
+        public const float MAX_TIME = 5.0f;
+
         public Health Health;
 
         public float Speed;
         public float JumpForce = 5.0f;
+        public Timer Timer;
 
         public void Awake()
         {

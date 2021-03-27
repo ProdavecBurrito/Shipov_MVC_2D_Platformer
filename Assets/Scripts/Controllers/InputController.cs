@@ -17,6 +17,7 @@ namespace Shipov_Platformer_MVC
 
         public void UpdateTick()
         {
+            //_playerView.Timer.CountTime();
             _playerModel.UpdateMovement(Input.GetAxis("Horizontal"), _playerView.Speed, Input.GetKeyDown(_jump), _playerView.JumpForce);
         }
     }

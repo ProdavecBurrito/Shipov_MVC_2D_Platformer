@@ -4,25 +4,33 @@ namespace Shipov_Platformer_MVC
 {
     public class Health
     {
-        public event Action Die = delegate () { };
+        public const float INVULNERABILITY_TIME = 5.0f;
+
+        public event Action Die = delegate () {};
         public event Action HealthsChange = delegate () {};
 
         public int MaxHealth { get;}
         public int CharacteHealth { get; private set; }
+        public bool CanChangeHealth;
 
         public Health(int maxHealth)
         {
+            CanChangeHealth = true;
             MaxHealth = maxHealth;
             CharacteHealth = maxHealth;
         }
 
         public void GetGamage(int damage)
         {
-            HealthsChange?.Invoke();
-            CharacteHealth -= damage;
-            if (CharacteHealth <= 0)
+            if (CanChangeHealth)
             {
-                Die?.Invoke();
+                CanChangeHealth = false;
+                HealthsChange?.Invoke();
+                CharacteHealth -= damage;
+                if (CharacteHealth <= 0)
+                {
+                    Die?.Invoke();
+                }
             }
         }
 
