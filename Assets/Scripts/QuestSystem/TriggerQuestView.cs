@@ -9,17 +9,18 @@ namespace Shipov_QuestSystem
 
         private void Awake()
         {
+            CharacterCollider = GetComponent<Collider2D>();
             _compliteQuestTrigger = CharacterCollider;
         }
 
         public override void ProcessActivate()
         {
-            _compliteQuestTrigger.enabled = false;
+            _compliteQuestTrigger.enabled = true;
         }
 
         public override void ProcessComplete()
         {
-            _compliteQuestTrigger.enabled = true;
+            _compliteQuestTrigger.enabled = false;
         }
     }
 }

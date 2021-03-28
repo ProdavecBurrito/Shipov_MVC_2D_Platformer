@@ -29,8 +29,8 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: AuestAnim
-  m_Speed: 1
+  m_Name: QuestAnim
+  m_Speed: 0.85
   m_CycleOffset: 0
   m_Transitions: []
   m_StateMachineBehaviours: []
@@ -59,7 +59,7 @@ AnimatorStateMachine:
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: 3900261252226156172}
-    m_Position: {x: 200, y: 0, z: 0}
+    m_Position: {x: 260, y: 110, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []

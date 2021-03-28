@@ -6,6 +6,6 @@ namespace Shipov_QuestSystem
     {
         event EventHandler<IQuest> Completed;
         bool IsCompleted { get; }
-        void Reset();
+        void StartQuest();
     }
 }

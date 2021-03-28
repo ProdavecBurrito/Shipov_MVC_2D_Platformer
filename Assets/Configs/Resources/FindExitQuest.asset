@@ -13,4 +13,8 @@ MonoBehaviour:
   m_Name: FindExitQuest
   m_EditorClassIdentifier: 
   QuestID: 0
+  StartQuestText: "\u041D\u0430\u0439\u0442\u0438 \u0432\u044B\u0445\u043E\u0434
+    \u0441 \u0443\u0440\u043E\u0432\u043D\u044F"
+  FinishedQuestText: "\u0412\u044B \u043D\u0430\u0448\u043B\u0438 \u0432\u044B\u0445\u043E\u0434"
+  RemovingObjects: []
   QuestType: 1

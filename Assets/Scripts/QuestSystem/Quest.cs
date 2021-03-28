@@ -49,7 +49,7 @@ namespace Shipov_QuestSystem
             Completed?.Invoke(this, this);
         }
 
-        public void Reset()
+        public void StartQuest()
         {
             if (_active)
             {

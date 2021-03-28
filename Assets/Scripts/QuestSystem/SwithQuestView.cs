@@ -16,13 +16,14 @@ namespace Shipov_QuestSystem
 
         public override void ProcessActivate()
         {
-            Debug.Log("1");
-            CharacterSpriteRenderer.sprite = _compliteSprite;
+            base.ProcessActivate();
+            CharacterSpriteRenderer.sprite = _startSprite;
         }
 
         public override void ProcessComplete()
         {
-            CharacterSpriteRenderer.sprite = _startSprite;
+            base.ProcessComplete();
+            CharacterSpriteRenderer.sprite = _compliteSprite;
         }
     }
 }
