@@ -1,4 +1,5 @@
 using System;
+using UnityEngine;
 
 namespace Shipov_Platformer_MVC
 {
@@ -9,13 +10,17 @@ namespace Shipov_Platformer_MVC
         public event Action Die = delegate () {};
         public event Action HealthsChange = delegate () {};
 
+        public Timer timer;
         public int MaxHealth { get;}
         public int CharacteHealth { get; private set; }
-        public bool CanChangeHealth;
+        public bool CanChangeHealth => _canChargeHealth;
+
+        private bool _canChargeHealth;
 
         public Health(int maxHealth)
         {
-            CanChangeHealth = true;
+            timer = new Timer();
+            _canChargeHealth = true;
             MaxHealth = maxHealth;
             CharacteHealth = maxHealth;
         }
@@ -24,7 +29,9 @@ namespace Shipov_Platformer_MVC
         {
             if (CanChangeHealth)
             {
-                CanChangeHealth = false;
+                Debug.Log(CharacteHealth);
+                timer.Init(INVULNERABILITY_TIME);
+                _canChargeHealth = false;
                 HealthsChange?.Invoke();
                 CharacteHealth -= damage;
                 if (CharacteHealth <= 0)
@@ -37,6 +44,11 @@ namespace Shipov_Platformer_MVC
         public void GetHealth(int healValue)
         {
             CharacteHealth += healValue;
+        }
+
+        public void IsCanChangeHealth(bool value)
+        {
+            _canChargeHealth = value;
         }
     }
 }

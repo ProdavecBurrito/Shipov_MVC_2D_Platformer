@@ -4,21 +4,40 @@ namespace Shipov_Platformer_MVC
 {
     public class PlayerView : LevelObjectView
     {
-        public const float MAX_TIME = 5.0f;
-
         public Health Health;
 
+        public MeshRenderer ShieldObject;
         public float Speed;
         public float JumpForce = 5.0f;
-        public Timer Timer;
+        public bool IsVisible;
 
         public void Awake()
         {
+            IsVisible = false;
             CharacterTransform = GetComponent<Transform>();
             CharacterRigidbody = GetComponent<Rigidbody2D>();
             CharacterSpriteRenderer = GetComponent<SpriteRenderer>();
             CharacterCollider = GetComponent<Collider2D>();
             Health = new Health(100);
+            ShieldObject = GetComponentInChildren<MeshRenderer>(true);
+            Health.timer.StartCountDown += ShieldOn;
+            Health.timer.EndCountDown += ShieldOn;
+        }
+
+        public void ShieldOn()
+        {
+            if (!IsVisible)
+            {
+                Debug.Log("meh");
+                ShieldObject.enabled = true;
+                IsVisible = true;
+            }
+            else
+            {
+                Debug.Log("meh2");
+                ShieldObject.enabled = false;
+                IsVisible = false;
+            }
         }
     }
 }

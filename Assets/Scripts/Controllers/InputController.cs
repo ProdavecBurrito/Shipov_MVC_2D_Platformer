@@ -13,11 +13,16 @@ namespace Shipov_Platformer_MVC
         {
             _playerModel = playerModel;
             _playerView = playerView;
+
         }
 
         public void UpdateTick()
         {
-            //_playerView.Timer.CountTime();
+            _playerView.Health.timer.CountTime();
+            if (!_playerView.Health.timer.IsOn)
+            {
+                _playerView.Health.IsCanChangeHealth(true);
+            }
             _playerModel.UpdateMovement(Input.GetAxis("Horizontal"), _playerView.Speed, Input.GetKeyDown(_jump), _playerView.JumpForce);
         }
     }

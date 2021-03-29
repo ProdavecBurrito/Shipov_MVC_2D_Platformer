@@ -1,9 +1,13 @@
+using System;
 using UnityEngine;
 
 namespace Shipov_Platformer_MVC
 {
     public class Timer
     {
+        public event Action StartCountDown = delegate () { };
+        public event Action EndCountDown = delegate () { };
+
         public float CurrentTime { get; private set; }
         public float EndTime { get; set; }
         public bool IsOn;
@@ -12,6 +16,7 @@ namespace Shipov_Platformer_MVC
         {
             EndTime = endtime;
             IsOn = true;
+            StartCountDown?.Invoke();
         }
 
         public void Reset()
@@ -39,6 +44,7 @@ namespace Shipov_Platformer_MVC
                 }
                 else
                 {
+                    EndCountDown?.Invoke();
                     Reset();
                 }
             }
