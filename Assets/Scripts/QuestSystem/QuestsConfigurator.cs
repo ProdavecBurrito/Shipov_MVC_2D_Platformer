@@ -15,7 +15,8 @@ namespace Shipov_QuestSystem
 
         private readonly Dictionary<QuestType, Func<IQuestModel>> _questFactories = new Dictionary<QuestType, Func<IQuestModel>>
         {
-            { QuestType.Switch, () => new SwitchQuestModel() },
+            { QuestType.Trigger, () => new CollisionQuestModel() },
+            { QuestType.Switch, () => new CollisionQuestModel() },
         };
 
         private readonly Dictionary<QuestStoryType, Func<List<IQuest>, IQuestStory>> _questStoryFactories = new Dictionary<QuestStoryType, Func<List<IQuest>, IQuestStory>>
@@ -83,7 +84,6 @@ namespace Shipov_QuestSystem
 
             if (_questFactories.TryGetValue(config.QuestType, out var factory))
             {
-                Debug.Log("2");
                 var questModel = factory.Invoke();
                 return new Quest(questView, questModel, _questUI);
             }

@@ -20,11 +20,5 @@ namespace Shipov_Platformer_MVC
             CharacterCollider = GetComponent<Collider2D>();
             Health = new Health(100);
         }
-
-        private void OnTriggerEnter2D(Collider2D collision)
-        {
-            var levelObject = collision.gameObject.GetComponent<LevelObjectView>();
-            OnLevelObjectContact?.Invoke(levelObject);
-        }
     }
 }

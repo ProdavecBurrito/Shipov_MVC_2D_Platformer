@@ -22,13 +22,15 @@ namespace Shipov_QuestSystem
 
         public void ModifyQuest()
         {
-            if (!_activateOnStart)
+            if (_activateOnStart)
             {
+                Debug.Log(6);
                 _baseQuestView.OnComplite += _questParticleSystem.PlayParticleSystem;
                 _baseQuestView.OnStart += _questParticleSystem.StopParticleSystem;
             }
             else
             {
+                Debug.Log(7);
                 _baseQuestView.OnComplite += _questParticleSystem.StopParticleSystem;
                 _baseQuestView.OnStart += _questParticleSystem.PlayParticleSystem;
             }
@@ -49,6 +51,7 @@ namespace Shipov_QuestSystem
 
         public void RemoveObjects()
         {
+            Debug.Log(7);
             foreach (var item in _removingObjects)
             {
                 item.SetActive(false);

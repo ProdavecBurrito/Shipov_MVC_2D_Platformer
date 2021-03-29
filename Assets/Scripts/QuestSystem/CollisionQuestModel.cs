@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Shipov_QuestSystem
 {
-    public class SwitchQuestModel : IQuestModel
+    public class CollisionQuestModel : IQuestModel
     {
         private const string TargetTag = "Player";
 

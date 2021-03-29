@@ -2362,7 +2362,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: -107.500015, y: -100}
+  m_AnchoredPosition: {x: -107.5, y: -100}
   m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &302235927
@@ -3303,6 +3303,7 @@ GameObject:
   - component: {fileID: 410895316}
   - component: {fileID: 410895318}
   - component: {fileID: 410895319}
+  - component: {fileID: 410895320}
   m_Layer: 0
   m_Name: LeverUp
   m_TagString: Untagged
@@ -8163,10 +8164,10 @@ MonoBehaviour:
   CharacterRigidbody: {fileID: 0}
   CharacterSpriteRenderer: {fileID: 0}
   CharacterCollider: {fileID: 0}
-  IsModified: 0
+  IsModified: 1
   StartQuestText: 
   FinishedQuestText: 
-  _id: 2
+  _id: 1
   _startSprite: {fileID: 0}
   _compliteSprite: {fileID: 21300000, guid: 53fe5536596828e4d825b293ed6fa148, type: 3}
 --- !u!114 &410895319
@@ -8181,6 +8182,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a8f7fe546155504d9a7cc6b125e4e9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!61 &410895320
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 410895313}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.090519905, y: -0.04671979}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.48024178, y: 0.54448175}
+  m_EdgeRadius: 0
 --- !u!4 &425455096 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1022958613671754679, guid: 447a880f1db1ba84abda6dbcdef7dcf6, type: 3}
@@ -13759,7 +13786,7 @@ MonoBehaviour:
   IsModified: 0
   StartQuestText: 
   FinishedQuestText: 
-  _id: 1
+  _id: 0
   _compliteQuestTrigger: {fileID: 0}
 --- !u!61 &1154928716
 BoxCollider2D:
@@ -20091,7 +20118,7 @@ Canvas:
   serializedVersion: 3
   m_RenderMode: 1
   m_Camera: {fileID: 636947453}
-  m_PlaneDistance: 1
+  m_PlaneDistance: 10
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
