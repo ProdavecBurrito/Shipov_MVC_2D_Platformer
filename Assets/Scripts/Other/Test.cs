@@ -3,18 +3,12 @@ using UnityEditor;
 
 public class Test : MonoBehaviour
 {
-#if UNITY_EDITOR
+    public Vector2 Vector2;
+    public Vector3 Vector3;
 
-
-    protected void OnDrawGizmos()
+    private void Awake()
     {
-        
-        Vector3 pos = transform.position + Vector3.down;
-
-        Handles.color = new Color(1.0f, 0.0f, 1.0f, 0.3f);
-        Handles.DrawSolidArc(pos, Vector3.down, transform.up, 90, 55);
-        Handles.DrawSolidArc(pos, Vector3.down, transform.up, -90, 55);
+        Debug.Log(Vector2.magnitude);
+        Debug.Log(Vector3.magnitude);
     }
-
-#endif
 }

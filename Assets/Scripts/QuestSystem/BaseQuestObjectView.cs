@@ -19,12 +19,12 @@ namespace Shipov_QuestSystem
 
         public virtual void ProcessComplete()
         {
-            OnStart?.Invoke();
+            OnComplite?.Invoke();
         }
 
         public virtual void ProcessActivate()
         {
-            OnComplite?.Invoke();
+            OnStart?.Invoke();
         }
     }
 }

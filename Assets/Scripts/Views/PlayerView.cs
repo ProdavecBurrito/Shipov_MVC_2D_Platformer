@@ -28,13 +28,11 @@ namespace Shipov_Platformer_MVC
         {
             if (!IsVisible)
             {
-                Debug.Log("meh");
                 ShieldObject.enabled = true;
                 IsVisible = true;
             }
             else
             {
-                Debug.Log("meh2");
                 ShieldObject.enabled = false;
                 IsVisible = false;
             }

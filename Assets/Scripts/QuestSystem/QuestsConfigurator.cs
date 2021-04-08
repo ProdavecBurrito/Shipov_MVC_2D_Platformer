@@ -10,6 +10,7 @@ namespace Shipov_QuestSystem
         [SerializeField] private QuestUI _questUI;
         [SerializeField] private QuestStoryConfig[] _questStoryConfigs;
         [SerializeField] private BaseQuestObjectView[] _questObjects;
+        [SerializeField] private QuestDoorView _questDoorView;
 
         private List<IQuestStory> _questStories;
 
@@ -55,23 +56,10 @@ namespace Shipov_QuestSystem
         {
             var questId = config.QuestID;
             var questView = _questObjects.FirstOrDefault(value => value.Id == config.QuestID);
-            if (questView.IsModified) // мне кажется, весь этот кусок - это огромный костыль
+            if (questView.IsModified)
             {
-                var questModifier = new QuestModifier(questView, questView.GetComponent<QuestParticleSystem>(), true);
+                var questModifier = new QuestModifier(questView, questView.GetComponent<QuestParticleSystem>(), _questDoorView, true);
                 questModifier.ModifyQuest();
-                for (int i = 0; i < _questStoryConfigs.Length; i++)
-                {
-                    for (int j = 0; j < _questStoryConfigs[i].quests.Length; j++)
-                    {
-                        if (_questStoryConfigs[i].quests[j].QuestID == questView.Id)
-                        {
-                            foreach (var item in _questStoryConfigs[i].quests[j].RemovingObjects)
-                            {
-                                questModifier.AddRemovingObject(item);
-                            }
-                        }
-                    }
-                }
             }
             questView.StartQuestText = config.StartQuestText;
             questView.FinishedQuestText = config.FinishedQuestText;
