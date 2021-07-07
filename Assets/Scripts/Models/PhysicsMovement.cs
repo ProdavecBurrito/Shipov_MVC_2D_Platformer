@@ -5,15 +5,17 @@ namespace Shipov_Platformer_MVC
     public class PhysicsMovement : IMovement
     {
         private const int MAX_JUMPS = 2;
-        private const float _jumpTime = 0.05f;
+        private const float JUMP_TIME = 0.05f;
+        private const float MAX_SPEED = 6.0f;
+        private const float REDUCE_VELOSITY_VALUE = 0.5f;
         private float _currentJumpTime;
-        private float maxSpeed = 2.0f;
 
         private Rigidbody2D _characterRigidbody;
         private SpriteAnimator _spriteAnimator;
         private ContactsDetector _contactsDetector;
         private SpriteRenderer _spriteRenderer;
 
+        private Vector2 _characterVelosity;
         private Vector3 _leftSide;
         private Vector3 _rightSide;
 
@@ -50,17 +52,32 @@ namespace Shipov_Platformer_MVC
                 {
                     _characterRigidbody.transform.localScale = _rightSide;
                 }
-
                 else if (x < 0)
                 {
                     _characterRigidbody.transform.localScale = _leftSide;
                 }
+
                 _characterRigidbody.AddForce((_characterRigidbody.transform.right * x) * currentSpeed * Time.deltaTime, ForceMode2D.Force);
+                CheckMaxValosity();
             }
             else
             {
                 _isWalk = false;
             }
+        }
+
+        private void CheckMaxValosity()
+        {
+            _characterVelosity = _characterRigidbody.velocity;
+            if (_characterRigidbody.velocity.x > MAX_SPEED)
+            {
+                _characterVelosity.x -= REDUCE_VELOSITY_VALUE;
+            }
+            else if (_characterRigidbody.velocity.x < -MAX_SPEED)
+            {
+                _characterVelosity.x += REDUCE_VELOSITY_VALUE;
+            }
+            _characterRigidbody.velocity = _characterVelosity;
         }
 
         private void Jump(bool isJump, float jumpForce)
@@ -104,7 +121,7 @@ namespace Shipov_Platformer_MVC
 
         public bool CanLand() // Мне кажется, что это кастыль
         {
-            if (_isJumping && _currentJumpTime < _jumpTime)
+            if (_isJumping && _currentJumpTime < JUMP_TIME)
             {
                 _currentJumpTime += Time.deltaTime;
                 return false;

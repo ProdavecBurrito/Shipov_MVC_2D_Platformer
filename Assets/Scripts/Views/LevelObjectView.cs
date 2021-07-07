@@ -19,5 +19,11 @@ namespace Shipov_Platformer_MVC
         }
 
         public Action<LevelObjectView> OnLevelObjectContact { get; set; }
+
+        private void OnTriggerEnter2D(Collider2D collision)
+        {
+            var levelObject = collision.gameObject.GetComponent<LevelObjectView>();
+            OnLevelObjectContact?.Invoke(levelObject);
+        }
     }
 }

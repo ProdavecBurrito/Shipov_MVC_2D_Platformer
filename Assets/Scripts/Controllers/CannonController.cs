@@ -1,6 +1,4 @@
-﻿using UnityEngine;
-
-namespace Shipov_Platformer_MVC
+﻿namespace Shipov_Platformer_MVC
 {
     public class CannonController : IUpdate
     {

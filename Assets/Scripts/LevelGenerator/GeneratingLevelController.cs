@@ -15,8 +15,10 @@ namespace LevelGenerator
 
         private Tilemap _tileMapGround;
         private Tilemap _tileMapWater;
+
         private Tile _groundTile;
         private Tile _waterTile;
+
         private int _mapWidth;
         private int _mapHeight;
         private int _smoothFactor;
