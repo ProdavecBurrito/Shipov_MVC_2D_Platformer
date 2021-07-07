@@ -55,7 +55,6 @@ namespace Shipov_Platformer_MVC
                 {
                     _characterRigidbody.transform.localScale = _leftSide;
                 }
-                //var speed = Vector2.ClampMagnitude((_characterRigidbody.transform.right * x) * currentSpeed * Time.fixedDeltaTime, 100.0f);
                 _characterRigidbody.AddForce((_characterRigidbody.transform.right * x) * currentSpeed * Time.deltaTime, ForceMode2D.Force);
             }
             else
@@ -115,8 +114,6 @@ namespace Shipov_Platformer_MVC
                 _currentJumpTime = 0;
                 return true;
             }
-            
         }
-
     }
 }

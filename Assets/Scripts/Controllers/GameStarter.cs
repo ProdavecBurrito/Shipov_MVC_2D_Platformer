@@ -27,6 +27,11 @@ namespace Shipov_Platformer_MVC
             _updatingObjects.AddUpdatingObject(_initializer.CannonController);
             _updatingObjects.AddUpdatingObject(_initializer.CoinsSpriteAnimator);
 
+            foreach (var item in _initializer.References.GetExposionsSpriteAnimators)
+            {
+                _updatingObjects.AddUpdatingObject(item);
+            }
+
             _fixedUpdatingObjects.AddUpdatingObject(_initializer.CameraController);
         }
 

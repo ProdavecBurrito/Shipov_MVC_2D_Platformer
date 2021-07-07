@@ -4,7 +4,8 @@ namespace Shipov_Platformer_MVC
 {
     public class Health
     {
-        public event Action Die = delegate() { };
+        public event Action Die = delegate () { };
+        public event Action HealthsChange = delegate () {};
 
         public int MaxHealth { get;}
         public int CharacteHealth { get; private set; }
@@ -17,6 +18,7 @@ namespace Shipov_Platformer_MVC
 
         public void GetGamage(int damage)
         {
+            HealthsChange?.Invoke();
             CharacteHealth -= damage;
             if (CharacteHealth <= 0)
             {

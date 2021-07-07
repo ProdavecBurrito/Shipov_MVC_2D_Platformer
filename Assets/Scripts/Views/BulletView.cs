@@ -1,21 +1,25 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace Shipov_Platformer_MVC
 {
     public class BulletView : LevelObjectView
     {
+        public event Action<Vector3> Explosion = delegate (Vector3 vector) { };
+
         private TrailRenderer _trail;
 
         private int _damage = 25;
 
         public bool IsVisible;
 
-        private void Start()
+        private void Awake()
         {
-            IsVisible = false;
             _trail = GetComponent<TrailRenderer>();
             CharacterTransform = GetComponent<Transform>();
             CharacterRigidbody = GetComponent<Rigidbody2D>();
+            CharacterSpriteRenderer = GetComponent<SpriteRenderer>();
+            SetVisible(false);
         }
 
         public void SetVisible(bool visible)
@@ -40,8 +44,13 @@ namespace Shipov_Platformer_MVC
                 var player = collision.GetComponent<PlayerView>();
                 player.Health.GetGamage(_damage);
                 SetVisible(false);
-                Debug.Log(player.Health.CharacteHealth);
+                Execute();
             }
+        }
+
+        public void Execute()
+        {
+            Explosion?.Invoke(transform.position);
         }
     }
 }

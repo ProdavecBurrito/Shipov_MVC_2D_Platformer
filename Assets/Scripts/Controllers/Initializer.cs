@@ -5,6 +5,7 @@ namespace Shipov_Platformer_MVC
 {
     public class Initializer
     {
+        public ExplosionsInitializer ExplosionsPool { get; private set; }
         public References References { get; private set; }
         public ParalaxManager ParalaxManager { get; private set; }
         public InputController InputController { get; private set; }
@@ -28,8 +29,10 @@ namespace Shipov_Platformer_MVC
             References = new References();
             var bulletViews = References.GetBulletViews;
 
+            var configCannonBulletAnimation = Resources.Load<SpriteAnimationCnfg>("CannonBulletExplosion");
             var configPlayerAnimation = Resources.Load<SpriteAnimationCnfg>("PlayerAnimations");
             var configCoinsAnimation = Resources.Load<SpriteAnimationCnfg>("CoinsAnimations");
+            var configBulletExplosions = Resources.Load<SpriteAnimationCnfg>("CannonBulletExplosion");
             PlayerView = References.GetPlayer;
 
             ContactsDetector = new ContactsDetector(PlayerView.CharacterCollider);
@@ -51,6 +54,8 @@ namespace Shipov_Platformer_MVC
             CannonController = new CannonController(CannonBurrel, CannonView);
 
             ParalaxManager = new ParalaxManager(camera, backGround);
+
+            ExplosionsPool = new ExplosionsInitializer(References.GetCannonExplosions, References.GetBulletViews, References.GetExplosionAnimators(configBulletExplosions));
         }
     }
 }
