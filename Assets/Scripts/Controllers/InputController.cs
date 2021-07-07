@@ -6,23 +6,18 @@ namespace Shipov_Platformer_MVC
     {
         private const KeyCode _jump = KeyCode.Space;
 
-        private PlayerModel _playerModel;
+        private IMovement _playerModel;
         private PlayerView _playerView;
 
-        public InputController(PlayerModel playerModel, PlayerView playerView)
+        public InputController(IMovement playerModel, PlayerView playerView)
         {
             _playerModel = playerModel;
             _playerView = playerView;
         }
 
-        public void UpdateTick()
+        public void Fly()
         {
-            _playerModel.Move(Input.GetAxis("Horizontal"), 0.0f, _playerView.Speed);
-
-            if (Input.GetKeyDown(_jump))
-            {
-                _playerModel.Jump(_playerView.JumpForce);
-            }
+            _playerModel.UpdateMovement(Input.GetAxis("Horizontal"), _playerView.Speed, Input.GetKeyDown(_jump), _playerView.JumpForce);
         }
     }
 }
